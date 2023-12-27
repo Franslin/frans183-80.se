@@ -1,0 +1,347 @@
+@font-face {
+    font-family: miami;
+    src: url(fonts/Love-Strong-personal-Use-Regular/Love\ Strong\ Personal\ Use.ttf);
+}
+
+/*#region standard rules*/
+:root{
+    --logoColor: #ec0498;
+    --primaryColor: #f499c2;
+    --secondaryColor: #54c3bc;
+    --thirdColor: #ffffff; 
+}
+
+html{
+    font-size: calc(16px + 0.390625vw);
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+p{
+    font-weight: 500;
+    margin: 0;
+    margin-top: 1.5%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    margin: 0;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /*Remove this for original font*/
+    font-family: miami;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+a{
+    color: initial;
+    -webkit-user-drag: none;
+}
+
+button, .read-button{
+    background-color: rgb(243, 243, 243);
+    border: 1.8px solid black;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5%;
+    transition-property: background-color;
+    transition-duration: 0.05s;
+    user-select: none;
+}
+
+button:hover, .read-button:hover{
+    background-color: lightgrey;
+}
+
+button:active, .read-button:active{
+    background-color: rgb(243, 243, 243);
+}
+
+/*#endregion*/
+
+/*#region header with logo and palm leaves*/
+header{
+    width: 100%;
+    height: fit-content;
+}
+
+#logo{
+    width: 45%;
+    display: block;
+    aspect-ratio: initial;
+    margin: auto;
+    margin-top: 6%;
+    margin-bottom: 2%;
+
+    position: relative;
+
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+
+.palm-leaves{
+    width: 20%;
+    aspect-ratio: initial;
+    position: absolute;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+
+#palm-left{
+    left: -20px;
+    left: -1.3%;
+    top: 0;
+}
+#palm-rigth{
+    right: -20px;
+    right: -1.3%;
+    top: 0;
+}
+/*#endregion*/
+
+/*#region navbar*/
+nav{
+    background-color: #f9efe4;
+    border: solid black 1.8px;
+    width: 56%;
+    height: 40px;
+    margin: auto;
+    padding: 0 2% 0 2%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav p{
+    margin: 0;
+}
+/*#endregion*/
+
+/*#region information sections*/
+/*base*/
+.information-section{
+    width: 60%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+    border: 1.5px solid black;
+    background-color: #f9efe4;
+    width: 59%;
+    padding: 0 0.5% 0.5% 0.5%;
+}
+
+/*adds a black border*/
+.content-border-div{
+    border: 1.5px solid black;
+    padding: 1% 0 1% 1%;
+}
+
+/*contains the X-button, the lines and the logo at the top of the section*/
+.section-flex-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.x-icon{
+    aspect-ratio: initial;
+    width: 2.5%;
+    margin: 1% 1% 0.5% 0;
+    padding: 0.2%;
+    border: 1.5px solid black;
+    -webkit-user-drag: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.x-icon:active{
+    background-color: #e1dad2;
+}
+
+/*Necessary to position hr-element as a group*/
+.hr-container{
+    width: 100%;
+}
+
+/*black lines*/
+hr{
+    height:2px;
+    width: 100%;
+    text-align: right;
+    border-width: 0;
+    margin: 0.5% 0 0.5% 0;
+    /*margin-left: auto;*/
+    color:black;
+    background-color:black
+}
+
+/*small black logo*/
+.favicon-black{
+    width: 5%;
+    padding: 1% 0 1% 1%;
+    aspect-ratio: initial;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+/*#endregion*/
+
+/*#region footer*/
+footer{
+    position: relative;
+    height: 210px;
+    height: 20vh; /*ev. 40%*/
+    bottom: 0;
+    z-index: 1;
+}
+
+.flamingo{
+    width: 10%;
+    aspect-ratio: initial;
+    position: absolute;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#flamingo-left{
+    left: 7%;
+    bottom: 10%;
+}
+
+#flamingo-rigth{
+    right: 5%;
+    bottom: 10%;
+}
+
+#wave-svg{
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+}
+/*#endregion*/
+
+/*#region project squares*/
+/*Basen och grundregler för rutorna i sektion 2*/
+.square-base{
+    background-color: white;
+    width: 28%;
+    height: 25vw; /*Här används vw istället för % för att jag vill att elementets höjd ska vara relativt till sidans bredd*/
+    height: 22vw;
+
+    border-color: #000000;
+    border-style: solid;
+    border-width: 1.5px;
+    box-shadow: 0px 0px 0px #000000;
+    transition-property: box-shadow;
+    transition-duration: 0.2s;
+    
+    margin: 1.52vw; /*20px*/
+    position: relative; /*för att placera ut .square-cover-content*/
+    overflow: hidden;
+    z-index: 1;
+}        
+/*Stilregler för h2 i rutorna*/
+.text-h2-square{
+    padding: 0px 10px 0px 10px;
+    font-size: 1.5rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*Stilregler för span-tagg som ger text bakgrundfärg*/
+.text-h2-square-markup{
+    background-color: #ffffff;
+    padding: 0.5%;
+}
+/*Stilregler för paragraferna i rutorna*/
+.text-paragraph-square{
+    padding: 0px 10px 0px 10px;
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+/*Sektion i rutan med den synliga rubriken innan man hovrar med muspekaren*/
+.square-content-visible{
+    min-width: 100%; /*min och max används för att jag vill att sektionen alltid ska vara lika bred som .square-content*/
+    max-width: 100%;
+    min-height: 75%;
+    max-height: 75%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+
+    background-image: url(images/las-flores-pixelated.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-user-drag: none;
+    
+    /*Vad som händer när man hovrar med muspekaren*/
+    transition-property: top;
+    transition-duration: 0.2s;
+}
+/*Sektion i rutan med den dolda paragrafen innan man hovrar med muspekaren*/
+.square-content-covered{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 25%;
+    max-height: 25%;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+
+    /*Vad som händer när man hovrar med muspekaren*/
+    transition-property: bottom;
+    transition-duration: 0.2s;
+}
+/*Rutan som täcker den dolda paragrafen*/
+.square-cover-content{
+    background-color: #ffffff;
+    border-top: 1.8px solid black;
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    bottom: 0;
+    z-index: 3;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Knapp för att ta sig vidare till artikeln*/
+.read-button{
+    width: 60%;
+    height: 50%;
+
+    margin: auto;
+    
+    text-align: center;
+    text-decoration: none;
+    font-size: 26px;
+    
+    /*font-family: os-heavy; - gammal font
+    padding-top: 2%;*/
+
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    cursor: pointer;
+}
+/*När man hovrar med muspekaren på rutan (Detta skapar animations-effekten)*/
+.square-base:hover .square-content-visible{
+    top: -70%;
+    top: -75%;
+}
+.square-base:hover .square-content-covered{
+    bottom: 70%;
+}
+.square-base:hover{
+    box-shadow: 5px 5px 20px #00f0e1;
+}
+/*#endregion*/
