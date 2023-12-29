@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
-    <meta chars
-    et="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frans Lindström</title>
     <link rel="stylesheet" href="style-sheet.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
 </head>
 <body>
+    <div id="container"> <!--Container for flex for content that is not footer-->
     <!--Header consisting of logo and palm-leaves-->
     <header>
-        <img id="palm-left" class="palm-leaves" src="images/palm-leaves-left.png" alt="">
-        <img id="logo" src="images/logo-new-blue.png" alt="Frans Lindström">
-        <img id="palm-rigth" class="palm-leaves" src="images/palm-leaves-rigth.png" alt="">
+        <img id="palm-left" class="palm-leaves" src="images/palm-leaves-left.webp" alt="">
+        <img id="logo" src="images/logo-new-blue.webp" alt="Frans Lindström">
+        <img id="palm-rigth" class="palm-leaves" src="images/palm-leaves-rigth.webp" alt="">
     </header>
 
     <!--Navigation bar-->
@@ -23,8 +23,8 @@
         <!--<a> as descendant to <button> is not permitted, but is in this case necessary if JS is disabled-->
         <button id="menu-start" type="button">STARTSIDA</button>
         <button id="menu-about-me" type="button">OM MIG</button>
-        <button id="menu-skills" type="button">MINA KUNSKAPER</button>
-        <button id="menu-projects" type="button">PROJEKT/PORTFOLIO</button>
+        <button id="menu-skills" type="button"><span class="hide-in-mobile-view">MINA </span>KUNSKAPER</button>
+        <button id="menu-projects" type="button">PROJEKT<span class="hide-in-mobile-view">/PORTFOLIO</span></button>
         <button id="menu-contact" type="button">KONTAKT</button>
     </nav>
 
@@ -107,6 +107,8 @@
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate eligendi numquam repellat doloremque ex culpa nobis neque. Quasi esse recusandae rerum, quos incidunt totam quae corporis sunt odio obcaecati doloremque.</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate eligendi numquam repellat doloremque ex culpa nobis neque. Quasi esse recusandae rerum, quos incidunt totam quae corporis sunt odio obcaecati doloremque.</p>
 
+                <p class="show-in-mobile">Text som förklarar Las flores</p>
+
                 <!--Projekt square-->
                 <section class="square-base">
                     <!--Synligt innehåll i rutan-->
@@ -141,18 +143,18 @@
             <!--Information section-->
             <article class="content-border-div">
                 <h1>Kontakt</h1>
-                <p>Om du vill kontakta mig går det bra att göra med denna mailadress: frans.lindstrom.webd23jon(at)edu.tucsweden.se</p>
-                <p>Det går även bra att skapa kontakt och skicka ett meddelande till min <a href="https://www.linkedin.com/in/frans-lindstr%C3%B6m/" target="_blank">LinkedIn-profil</a>.</p>
+                <p>Om du vill kontakta mig går det bra att göra med denna mailadress: frans.lindstrom.webd23jon(at)edu<br class="show-in-mobile">.tucsweden.se</p>
+                <p>Det går även bra att skapa kontakt och skicka ett meddelande till min <a href="https://www.linkedin.com/in/frans-lindstr%C3%B6m/" target="_blank">Linkedin-profil</a>.</p>
                 <p>Personligt brev och CV kan lämnas ut på begäran.</p>
                 <p>Jag ser fram emot att höra från dig!</p>
             </article>
         </section>
     </main>
-
+</div>
 <!--footer with flamingos and waves-->
 <footer>
-    <img id="flamingo-left" class="flamingo" src="images/flamingo-left.png" alt="flamingo image">
-    <img id="flamingo-rigth" class="flamingo" src="images/flamingo-rigth.png" alt="flamingo image">
+    <img id="flamingo-left" class="flamingo" src="images/flamingo-left.webp" alt="flamingo image">
+    <img id="flamingo-rigth" class="flamingo" src="images/flamingo-rigth.webp" alt="flamingo image">
     <svg id="wave-svg" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
         
         <defs>  

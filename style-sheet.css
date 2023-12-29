@@ -5,21 +5,26 @@
 
 /*#region standard rules*/
 :root{
-    --logoColor: #ec0498;
+   /* --logoColor: #ec0498;
     --primaryColor: #f499c2;
     --secondaryColor: #54c3bc;
-    --thirdColor: #ffffff; 
+    --thirdColor: #ffffff; */
 }
 
 html{
     font-size: calc(16px + 0.390625vw);
     scroll-behavior: smooth;
+    height: 100%; /*For body to become 100% in height*/
+    overflow-x: hidden;
 }
 
 body{
     margin: 0;
     overflow-x: hidden;
     overflow-y: scroll;
+    min-height: 100vh;
+    max-width: 1801px; /*for very wide screens*/
+    position: relative;
 }
 
 p{
@@ -77,7 +82,7 @@ header{
     display: block;
     aspect-ratio: initial;
     margin: auto;
-    margin-top: 6%;
+    margin-top: 3%; /*before 6%*/
     margin-bottom: 2%;
 
     position: relative;
@@ -87,21 +92,22 @@ header{
 }
 
 .palm-leaves{
-    width: 20%;
+    width: 20%; /*uncut leves*/
     aspect-ratio: initial;
     position: absolute;
     -webkit-user-drag: none;
     -webkit-user-select: none;
+    z-index: -1;
 }
 
 #palm-left{
     left: -20px;
-    left: -1.3%;
+    left: -1.3%; /*uncut leves*/
     top: 0;
 }
 #palm-rigth{
     right: -20px;
-    right: -1.3%;
+    right: -1.3%;  /*uncut leves*/
     top: 0;
 }
 /*#endregion*/
@@ -143,7 +149,7 @@ nav p{
 /*adds a black border*/
 .content-border-div{
     border: 1.5px solid black;
-    padding: 1% 0 1% 1%;
+    padding: 1% 0 2% 1%;
 }
 
 /*contains the X-button, the lines and the logo at the top of the section*/
@@ -193,15 +199,21 @@ hr{
     -webkit-user-drag: none;
     user-select: none;
 }
+
+/*Shows text exaplaining projects in mobile*/
+.show-in-mobile{
+    display: none;
+}
 /*#endregion*/
 
 /*#region footer*/
 footer{
     position: relative;
-    height: 210px;
-    height: 20vh; /*ev. 40%*/
-    bottom: 0;
+    height: 20vh;
+    margin-top: 24vh;
+    margin-top: 10vh;
     z-index: 1;
+    width: 100%;
 }
 
 .flamingo{
@@ -210,19 +222,19 @@ footer{
     position: absolute;
     user-select: none;
     -webkit-user-drag: none;
+    bottom: 10%;
 }
 
 #flamingo-left{
     left: 7%;
-    bottom: 10%;
 }
 
 #flamingo-rigth{
     right: 5%;
-    bottom: 10%;
 }
 
 #wave-svg{
+    width: 100%;
     z-index: 1;
     position: absolute;
     bottom: 0;
@@ -277,7 +289,7 @@ footer{
     top: 0;
     z-index: 2;
 
-    background-image: url(images/las-flores-pixelated.png);
+    background-image: url(images/las-flores-pixelated.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -319,23 +331,19 @@ footer{
 .read-button{
     width: 60%;
     height: 50%;
-
     margin: auto;
     
     text-align: center;
     text-decoration: none;
     font-size: 26px;
+    cursor: pointer;
     
-    /*font-family: os-heavy; - gammal font
-    padding-top: 2%;*/
+    /*font-family: os-heavy; - gammal font*/
 
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    cursor: pointer;
 }
 /*När man hovrar med muspekaren på rutan (Detta skapar animations-effekten)*/
 .square-base:hover .square-content-visible{
-    top: -70%;
     top: -75%;
 }
 .square-base:hover .square-content-covered{
@@ -344,4 +352,415 @@ footer{
 .square-base:hover{
     box-shadow: 5px 5px 20px #00f0e1;
 }
+/*#endregion*/
+
+/* #region Media queries*/
+    /*For really small phones (ex Iphone SE)
+    @media screen and (max-width: 400px) {
+
+    }*/
+    /*For phones*/
+    @media screen and (max-width: 599px) {
+        
+        /*#region basic rules*/
+        body{
+            display: flex; /*to position footer*/
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        p{
+            margin-top: 3.5%;
+        }
+        /*#endregion*/
+
+        /*#region header*/
+        header{
+            padding-top: 6%;
+        }
+        
+        #logo{
+            width: 75%;
+            margin-top: 0;
+            margin-bottom: 5%;
+        }
+        /*#endregion*/
+        
+        /*#region navbar*/
+        nav{
+            height: 100px;
+            width: 80%;
+            padding: 0;
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            
+            flex-wrap: wrap;
+        }
+
+        /*"Visa sektion"-text*/
+        nav p{
+            display: none;
+        }
+
+        /*menu buttons*/
+        nav button{
+            width: 40%;
+            aspect-ratio: initial;
+            font-size: 1rem;
+        }
+
+        /*hides parts of menu options in mobile view*/
+        nav .hide-in-mobile-view{
+            display: none;
+        }
+        /*#endregion*/
+
+        /*#region information-sections*/
+        main{
+            padding-bottom: 0; /*to make footer keep distance from sections*/
+        }
+
+        .information-section{
+            width: 80%;
+            margin-top: 4%;
+            padding: 0 0.8% 0.8% 0.8%;
+        }
+
+        .x-icon{
+            width: 6%;
+        }
+
+        .favicon-black{
+            width: 10%;
+        }
+
+        hr{
+            margin: 1% 0 1% 0;
+        }
+
+        /*Shows text exaplaining projects in mobile*/
+        .show-in-mobile{
+            display: block;
+        }
+        /*#endregion*/
+
+        /*#region project-square*/
+        .square-base{
+            margin: 2% auto 2% auto;
+            height: unset;
+            width: 70%;
+            aspect-ratio: 1 / 1.4;
+            transition-property: none;
+        }
+        /*Removes the animation from square*/
+        .square-base:hover{
+            top: unset;
+        }
+        .square-content-visible{
+            transition-property: none;
+            top: unset;
+        }
+        .square-content-covered{
+            transition-property: none;
+            bottom: unset;
+        }
+        .square-base:hover{
+            box-shadow: none;
+        }
+        .square-base:hover .square-content-visible{
+            top: initial;
+        }
+        .square-base:hover .square-content-covered{
+            bottom: initial;
+        }
+        /*hides the description in the squares that cannnot be showed in mobile*/
+        .text-paragraph-square{
+            display: none;
+        }
+        /*#endregion*/
+        
+        /*#region footer*/
+        footer{
+            margin: 0;
+            place-self: end center;
+        }
+
+        .flamingo{
+            width: 15%;
+            bottom: -0%;
+        }
+        #flamingo-rigth{
+            right: 2%;
+        }
+        /*#endregion*/
+    }
+    /*For tablet potrait up*/
+    @media screen and (min-width: 600px) and (max-width: 899px) {   
+        /*#region basic rules*/
+        body{
+            display: flex; /*to position footer*/
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        p{
+            margin-top: 3.5%;
+        }
+        /*#endregion*/
+
+        /*#region header*/
+        header{
+            padding-top: 6%;
+        }
+        
+        #logo{
+            width: 75%;
+            margin-top: 0;
+            margin-bottom: 5%;
+        }
+        /*#endregion*/
+        
+        /*#region navbar*/
+        nav{
+            height: 100px;
+            width: 80%;
+            padding: 0;
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            
+            flex-wrap: wrap;
+        }
+
+        /*"Visa sektion"-text*/
+        nav p{
+            display: none;
+        }
+
+        /*menu buttons*/
+        nav button{
+            width: 40%;
+            aspect-ratio: initial;
+            font-size: 1rem;
+        }
+
+        /*hides parts of menu options in mobile view*/
+        nav .hide-in-mobile-view{
+            display: none;
+        }
+        /*#endregion*/
+
+        /*#region information-sections*/
+        main{
+            padding-bottom: 0; /*to make footer keep distance from sections*/
+        }
+
+        .information-section{
+            width: 80%;
+            margin-top: 4%;
+            padding: 0 0.8% 0.8% 0.8%;
+        }
+
+        .x-icon{
+            width: 6%;
+        }
+
+        .favicon-black{
+            width: 10%;
+        }
+
+        hr{
+            margin: 1% 0 1% 0;
+        }
+
+        /*Shows text exaplaining projects in mobile*/
+        .show-in-mobile{
+            display: block;
+        }
+        /*#endregion*/
+
+        /*#region project-square*/
+        .square-base{
+            margin: 2% auto 2% auto;
+            height: unset;
+            width: 70%;
+            aspect-ratio: 1 / 1.4;
+            transition-property: none;
+        }
+        /*Removes the animation from square*/
+        .square-base:hover{
+            top: unset;
+        }
+        .square-content-visible{
+            transition-property: none;
+            top: unset;
+        }
+        .square-content-covered{
+            transition-property: none;
+            bottom: unset;
+        }
+        .square-base:hover{
+            box-shadow: none;
+        }
+        .square-base:hover .square-content-visible{
+            top: initial;
+        }
+        .square-base:hover .square-content-covered{
+            bottom: initial;
+        }
+        /*hides the description in the squares that cannnot be showed in mobile*/
+        .text-paragraph-square{
+            display: none;
+        }
+        /*#endregion*/
+        
+        /*#region footer*/  
+        footer{
+            margin: 0;
+            place-self: end center;
+        }
+
+        .flamingo{
+            width: 15%;
+            bottom: -0%;
+        }
+        #flamingo-rigth{
+            right: 2%;
+        }
+        /*#endregion*/
+    }
+
+    /*Breakpoint for mobile version of site*/
+
+    /*For tablet landscape up + small computers*/
+    @media screen and (min-width: 900px) {   
+
+        /*#region navbar*/
+        nav{
+            width: 58%;
+            padding: 0 1% 0 1%;
+        }
+        
+        /*"Visa sektion"-text*/
+        #navbar p{
+            font-size: 0.7rem;
+        }
+
+        /*navigation buttons*/
+        #navbar button{
+            font-size: 0.6rem;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        /*#endregion*/
+
+        /*#region project-squares*/
+        /*h2 in squares*/
+        .text-h2-square{
+        padding: 0px 10px 0px 10px;
+        font-size: 1.2rem;
+        }
+
+        /*the text/paragraphs in squares*/
+        .text-paragraph-square{
+            font-size: 0.8rem;
+        }
+
+        /*show-project button*/
+        .read-button{
+            font-size: 1rem;
+        }
+        /*#endregion*/
+    }
+    /*For desktop up*/
+    @media screen and (min-width: 1200px) {   
+        /*#region navbar*/
+        nav{
+            width: 58%;
+            padding: 0 1% 0 1%;
+        }
+
+        /*"Visa sektion"-text*/
+        #navbar p{
+           font-size: 1rem;
+        }
+
+        /*navigation buttons*/
+        #navbar button{
+            font-size: 0.65rem;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        /*#endregion*/
+
+        /*#region project-squares*/
+        /*h2 in squares*/
+        .text-h2-square{
+        padding: 0px 10px 0px 10px;
+        font-size: 1.5rem;
+        }
+
+        /*the text/paragraphs in squares*/
+        .text-paragraph-square{
+            font-size: 0.9rem;
+        }
+
+        /*show-project button*/
+        .read-button{
+            font-size: 1rem;
+            padding-top: 2%;
+        }
+        /*#endregion*/
+    }
+    /*For big desktop*/
+    @media screen and (min-width: 1800px) {
+        /*#region navbar*/
+        nav{
+            width: 58%;
+            padding: 0 1% 0 1%;
+        }
+
+        /*"Visa sektion"-text*/
+        #navbar p{
+           font-size: 1rem;
+        }
+
+        /*navigation buttons*/
+        #navbar button{
+            font-size: 0.6rem;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        /*#endregion*/
+
+        /*#region project-squares*/
+        /*h2 in squares*/
+        .text-h2-square{
+        padding: 0px 10px 0px 10px;
+        font-size: 1.5rem;
+        }
+
+        /*the text/paragraphs in squares*/
+        .text-paragraph-square{
+            font-size: 0.9rem;
+        }
+
+        /*show-project button*/
+        .read-button{
+            font-size: 1rem;
+            padding-top: 2%;
+        }
+        /*#endregion*/
+
+        body{
+            border: 1.5px solid black;
+            width: 100%;
+            margin: auto;
+        }
+    }
 /*#endregion*/
