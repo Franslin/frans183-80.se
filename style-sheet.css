@@ -21,7 +21,7 @@ html{
 body{
     margin: 0;
     overflow-x: hidden;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
     min-height: 100vh;
     max-width: 1801px; /*for very wide screens*/
     position: relative;
@@ -29,9 +29,11 @@ body{
 
 p{
     font-weight: 500;
-    margin: 0;
+    margin: 0 1%;
     margin-top: 1.5%;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 h1{
@@ -48,6 +50,24 @@ h1{
 a{
     color: initial;
     -webkit-user-drag: none;
+}
+
+details{
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 1%;
+    margin-top: 2%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+summary{
+    cursor: pointer;
+    user-select: none;
+}
+
+details p{
+    margin-top: 1.5%;
+    margin-left: 3.5%;
+    user-select: unset;
 }
 
 button, .read-button{
@@ -68,13 +88,13 @@ button:hover, .read-button:hover{
 button:active, .read-button:active{
     background-color: rgb(243, 243, 243);
 }
-
 /*#endregion*/
 
 /*#region header with logo and palm leaves*/
 header{
     width: 100%;
     height: fit-content;
+    -webkit-user-drag: none;
 }
 
 #logo{
@@ -149,7 +169,7 @@ nav p{
 /*adds a black border*/
 .content-border-div{
     border: 1.5px solid black;
-    padding: 1% 0 2% 1%;
+    padding: 1% 0 1% 1%;
 }
 
 /*contains the X-button, the lines and the logo at the top of the section*/
@@ -204,6 +224,13 @@ hr{
 .show-in-mobile{
     display: none;
 }
+
+#self-image{
+    user-select: none;
+    -webkit-user-drag: none;
+    border: 1.5px solid black;
+    aspect-ratio: initial;
+}
 /*#endregion*/
 
 /*#region footer*/
@@ -256,7 +283,8 @@ footer{
     transition-property: box-shadow;
     transition-duration: 0.2s;
     
-    margin: 1.52vw; /*20px*/
+    margin: 1%;
+    margin-top: 2%;
     position: relative; /*för att placera ut .square-cover-content*/
     overflow: hidden;
     z-index: 1;
@@ -289,7 +317,7 @@ footer{
     top: 0;
     z-index: 2;
 
-    background-image: url(images/las-flores-pixelated.webp);
+    background-image: url(images/las-flores.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -333,10 +361,15 @@ footer{
     height: 50%;
     margin: auto;
     
-    text-align: center;
     text-decoration: none;
-    font-size: 26px;
+    font-size: 1.2rem;
     cursor: pointer;
+
+    /*to center text in button*/
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     
     /*font-family: os-heavy; - gammal font*/
 
@@ -350,17 +383,170 @@ footer{
     bottom: 70%;
 }
 .square-base:hover{
-    box-shadow: 5px 5px 20px #00f0e1;
+    box-shadow: 0px 0px 15px #00f0e1;
 }
 /*#endregion*/
 
 /* #region Media queries*/
-    /*For really small phones (ex Iphone SE)
-    @media screen and (max-width: 400px) {
+    /*For really small phones (ex Iphone SE)*/
+    @media screen and (max-width: 399px) {
+        /*#region basic rules*/
+        body{
+            display: flex; /*to position footer*/
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-    }*/
+        p{
+            margin: 3.5%;
+
+        }
+
+        /*details currently only used in "mina kunskaper"*/
+        details{
+            font-size: 1.2rem;
+            margin-top: 3.5%;
+            margin-left: 3.5%;
+        }
+
+        details p{
+            margin-left: 3.5%;
+        }
+
+        /*hides parts of menu options in mobile view*/
+        .hide-in-mobile-view{
+            display: none;
+        }
+        /*#endregion*/
+
+        /*#region header*/
+        header{
+            padding-top: 6%;
+        }
+        
+        #logo{
+            width: 75%;
+            margin-top: 0;
+            margin-bottom: 5%;
+        }
+        /*#endregion*/
+      
+        /*#region navbar*/
+        nav{
+            height: 100px;
+            width: 80%;
+            padding: 0;
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            
+            flex-wrap: wrap;
+        }
+
+        /*"Visa sektion"-text*/
+        nav p{
+            display: none;
+        }
+
+        /*menu buttons*/
+        nav button{
+            width: 45%;
+            aspect-ratio: initial;
+            font-size: 0.8rem;
+        }
+        /*#endregion*/        
+
+        /*#region information-sections*/
+        main{
+            padding-bottom: 0; /*to make footer keep distance from sections*/
+        }
+
+        .information-section{
+            width: 80%;
+            margin-top: 4%;
+            padding: 0 0.8% 0.8% 0.8%;
+        }
+
+        .x-icon{
+            width: 6%;
+        }
+
+        .favicon-black{
+            width: 10%;
+        }
+
+        hr{
+            margin: 1% 0 1% 0;
+        }
+
+        /*Shows text exaplaining projects in mobile*/
+        .show-in-mobile{
+            display: block;
+        }
+
+        /*self image in about section*/
+        #self-image{
+            width: 40%;
+            float: right;
+            margin: 1% 2% 0 2%;
+        }
+        /*#endregion*/
+
+        /*#region project-square*/
+        .square-base{
+            margin: 2% auto 2% auto;
+            height: unset;
+            width: 70%;
+            aspect-ratio: 1 / 1.4;
+            transition-property: none;
+        }
+        /*Removes the animation from square*/
+        .square-base:hover{
+            top: unset;
+        }
+        .square-content-visible{
+            transition-property: none;
+            top: unset;
+        }
+        .square-content-covered{
+            transition-property: none;
+            bottom: unset;
+        }
+        .square-base:hover{
+            box-shadow: none;
+        }
+        .square-base:hover .square-content-visible{
+            top: initial;
+        }
+        .square-base:hover .square-content-covered{
+            bottom: initial;
+        }
+        /*hides the description in the squares that cannnot be showed in mobile*/
+        .text-paragraph-square{
+            display: none;
+        }
+        /*#endregion*/
+        
+        /*#region footer*/
+        footer{
+            margin: 0;
+            place-self: end center;
+        }
+
+        .flamingo{
+            width: 15%;
+            bottom: -0%;
+        }
+        #flamingo-rigth{
+            right: 2%;
+        }
+        /*#endregion*/
+
+    }
     /*For phones*/
-    @media screen and (max-width: 599px) {
+    @media screen and (min-width: 400px) and (max-width: 599px){
         
         /*#region basic rules*/
         body{
@@ -370,7 +556,23 @@ footer{
         }
 
         p{
+            margin: 3.5%;
+        }
+
+        /*details currently only used in "mina kunskaper"*/
+        details{
+            font-size: 1.2rem;
             margin-top: 3.5%;
+            margin-left: 3.5%;
+        }
+
+        details p{
+            margin-left: 3.5%;
+        }
+
+        /*hides parts of menu options in mobile view*/
+        .hide-in-mobile-view{
+            display: none;
         }
         /*#endregion*/
 
@@ -439,6 +641,13 @@ footer{
 
         hr{
             margin: 1% 0 1% 0;
+        }
+
+        /*self image in about section*/
+        #self-image{
+            width: 40%;
+            float: right;
+            margin: 1% 2% 0 2%;
         }
 
         /*Shows text exaplaining projects in mobile*/
@@ -507,7 +716,23 @@ footer{
         }
 
         p{
+            margin: 2%;
+        }
+
+        /*details currently only used in "mina kunskaper"*/
+        details{
+            font-size: 1.2rem;
             margin-top: 3.5%;
+            margin-left: 2%;
+        }
+
+        details p{
+            margin-left: 3.5%;
+        }
+
+        /*hides parts of menu options in mobile view*/
+        .hide-in-mobile-view{
+            display: none;
         }
         /*#endregion*/
 
@@ -525,9 +750,9 @@ footer{
         
         /*#region navbar*/
         nav{
-            height: 100px;
+            height: fit-content;
             width: 80%;
-            padding: 0;
+            padding: 1% 0;
             
             display: flex;
             flex-direction: row;
@@ -547,6 +772,7 @@ footer{
             width: 40%;
             aspect-ratio: initial;
             font-size: 1rem;
+            margin: 1%;
         }
 
         /*hides parts of menu options in mobile view*/
@@ -567,15 +793,22 @@ footer{
         }
 
         .x-icon{
-            width: 6%;
+            width: 4%;
         }
 
         .favicon-black{
-            width: 10%;
+            width: 6%;
         }
 
         hr{
             margin: 1% 0 1% 0;
+        }
+
+        /*self image in about section*/
+        #self-image{
+            width: 30%;
+            float: right;
+            margin: 1% 2% 0 2%;
         }
 
         /*Shows text exaplaining projects in mobile*/
@@ -588,7 +821,7 @@ footer{
         .square-base{
             margin: 2% auto 2% auto;
             height: unset;
-            width: 70%;
+            width: 40%;
             aspect-ratio: 1 / 1.4;
             transition-property: none;
         }
@@ -675,6 +908,13 @@ footer{
         .read-button{
             font-size: 1rem;
         }
+
+        /*self image in about section*/
+        #self-image{
+            width: 30%;
+            float: right;
+            margin: 1% 2% 0 1%;
+        }
         /*#endregion*/
     }
     /*For desktop up*/
@@ -713,7 +953,7 @@ footer{
         /*show-project button*/
         .read-button{
             font-size: 1rem;
-            padding-top: 2%;
+            /*padding-top: 2%;*/
         }
         /*#endregion*/
     }
