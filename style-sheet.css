@@ -21,10 +21,14 @@ html{
 body{
     margin: 0;
     overflow-x: hidden;
-    /*overflow-y: scroll;*/
     min-height: 100vh;
     max-width: 1801px; /*for very wide screens*/
     position: relative;
+    
+    /*to position footer*/
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 p{
@@ -237,7 +241,7 @@ hr{
 footer{
     position: relative;
     height: 20vh;
-    margin-top: 24vh;
+    /*margin-top: 24vh;*/
     margin-top: 10vh;
     z-index: 1;
     width: 100%;
@@ -391,12 +395,6 @@ footer{
     /*For really small phones (ex Iphone SE)*/
     @media screen and (max-width: 399px) {
         /*#region basic rules*/
-        body{
-            display: flex; /*to position footer*/
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
         p{
             margin: 3.5%;
 
@@ -532,7 +530,7 @@ footer{
         /*#region footer*/
         footer{
             margin: 0;
-            place-self: end center;
+            /*place-self: end center;*/
         }
 
         .flamingo{
@@ -549,12 +547,6 @@ footer{
     @media screen and (min-width: 400px) and (max-width: 599px){
         
         /*#region basic rules*/
-        body{
-            display: flex; /*to position footer*/
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
         p{
             margin: 3.5%;
         }
@@ -694,7 +686,7 @@ footer{
         /*#region footer*/
         footer{
             margin: 0;
-            place-self: end center;
+            /*place-self: end center;*/
         }
 
         .flamingo{
@@ -709,11 +701,6 @@ footer{
     /*For tablet potrait up*/
     @media screen and (min-width: 600px) and (max-width: 899px) {   
         /*#region basic rules*/
-        body{
-            display: flex; /*to position footer*/
-            flex-direction: column;
-            justify-content: space-between;
-        }
 
         p{
             margin: 2%;
@@ -855,7 +842,7 @@ footer{
         /*#region footer*/  
         footer{
             margin: 0;
-            place-self: end center;
+            /*place-self: end center;*/
         }
 
         .flamingo{
