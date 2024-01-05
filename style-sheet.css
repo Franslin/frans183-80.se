@@ -31,24 +31,39 @@ body{
     justify-content: space-between;
 }
 
+h1{
+    margin: 0;
+    margin-left: 1%;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+
+    /*Remove this for original font*/
+    font-family: miami;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+h2{
+    margin: 0;
+    margin-top: 3.5%;
+    margin-left: 3.5%;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    place-self: start left; /*for h2 affected by flex in project-squares-container*/
+}
+
 p{
     font-weight: 500;
     margin: 0 1%;
     margin-top: 1.5%;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
     font-size: 0.9rem;
 }
 
-h1{
-    margin: 0;
-    font-weight: bold;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-    /*Remove this for original font*/
-    font-family: miami;
-    font-size: 1.5rem;
-    display: inline-block;
+li{
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 
 a{
@@ -173,7 +188,7 @@ nav p{
 /*adds a black border*/
 .content-border-div{
     border: 1.5px solid black;
-    padding: 1% 0 1% 1%;
+    padding: 1% 0 1% 0%;
 }
 
 /*contains the X-button, the lines and the logo at the top of the section*/
@@ -248,12 +263,14 @@ footer{
 }
 
 .flamingo{
-    width: 10%;
+    /*width: 10%;*/
+    width: 8.5%;
     aspect-ratio: initial;
     position: absolute;
     user-select: none;
     -webkit-user-drag: none;
-    bottom: 10%;
+    /*bottom: 10%;*/
+    bottom: 14%;
 }
 
 #flamingo-left{
@@ -273,6 +290,17 @@ footer{
 /*#endregion*/
 
 /*#region project squares*/
+
+/*Container för alla rutor (används för positionering)*/
+#project-square-container{
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
 /*Basen och grundregler för rutorna i sektion 2*/
 .square-base{
     background-color: white;
@@ -296,6 +324,7 @@ footer{
 /*Stilregler för h2 i rutorna*/
 .text-h2-square{
     padding: 0px 10px 0px 10px;
+    margin: 8% 0 0 4%;
     font-size: 1.5rem;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -320,8 +349,6 @@ footer{
     position: absolute;
     top: 0;
     z-index: 2;
-
-    background-image: url(images/las-flores.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -331,6 +358,15 @@ footer{
     transition-property: top;
     transition-duration: 0.2s;
 }
+
+/*background images for squares*/
+#las-flores-square-background{
+    background-image: url(images/las-flores.webp);
+}
+#kommun-square-background{
+    background-image: url(images/logo.png);
+}
+
 /*Sektion i rutan med den dolda paragrafen innan man hovrar med muspekaren*/
 .square-content-covered{
     min-width: 100%;
@@ -396,8 +432,11 @@ footer{
     @media screen and (max-width: 399px) {
         /*#region basic rules*/
         p{
-            margin: 3.5%;
+            margin: 3.5% 3.5% 0 3.5%;
+        }
 
+        li{
+            margin: 0 6% 3.5% 0;
         }
 
         /*details currently only used in "mina kunskaper"*/
@@ -493,6 +532,15 @@ footer{
         /*#endregion*/
 
         /*#region project-square*/
+        #project-square-container{
+            width: 100%;
+            height: fit-content;
+        
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
         .square-base{
             margin: 2% auto 2% auto;
             height: unset;
@@ -548,7 +596,11 @@ footer{
         
         /*#region basic rules*/
         p{
-            margin: 3.5%;
+            margin: 3.5% 3.5% 0 3.5%;
+        }
+
+        li{
+            margin: 0 6% 3.5% 0;
         }
 
         /*details currently only used in "mina kunskaper"*/
@@ -701,9 +753,15 @@ footer{
     /*For tablet potrait up*/
     @media screen and (min-width: 600px) and (max-width: 899px) {   
         /*#region basic rules*/
-
+        h2{
+            margin: 2%;
+        }
         p{
             margin: 2%;
+        }
+
+        li{
+            margin: 0 6% 2% 0;
         }
 
         /*details currently only used in "mina kunskaper"*/
@@ -805,6 +863,10 @@ footer{
         /*#endregion*/
 
         /*#region project-square*/
+        #project-square-container{
+            flex-direction: column;
+        }
+
         .square-base{
             margin: 2% auto 2% auto;
             height: unset;
@@ -842,6 +904,7 @@ footer{
         /*#region footer*/  
         footer{
             margin: 0;
+            margin-top: 8%;
             /*place-self: end center;*/
         }
 

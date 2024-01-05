@@ -1,3 +1,4 @@
+
 //User menu options
 let menuStart = document.getElementById("menu-start");
 let menuAboutMe = document.getElementById("menu-about-me");
@@ -102,3 +103,11 @@ menuContact.addEventListener("click", function(){
 })
 
 reset();
+
+//Log screen size to console
+let innerX = window.innerWidth;
+let innerY = window.innerHeight;
+let windowX = window.outerWidth
+let windowY = window.outerHeight
+console.log(`Inner size: ${innerX} x ${innerY}`);
+console.log(`Outer size: ${windowX} x ${windowY}`);
