@@ -3,6 +3,11 @@
     src: url(fonts/Love-Strong-personal-Use-Regular/Love\ Strong\ Personal\ Use.ttf);
 }
 
+@font-face {
+    font-family: inika-bold;
+    src: url(fonts/Inika/Inika-Bold.ttf);
+}
+
 /*#region standard rules*/
 :root{
    /* --logoColor: #ec0498;
@@ -35,11 +40,12 @@ h1{
     margin: 0;
     margin-left: 1%;
     font-weight: bold;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
     
 
     /*Remove this for original font*/
-    font-family: miami;
+    /*font-family: miami;*/
+    font-family: inika-bold;
     font-size: 1.5rem;
     display: inline-block;
 }
