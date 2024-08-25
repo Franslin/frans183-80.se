@@ -16,6 +16,21 @@
     <title>Frans Lindström</title>
     <link rel="stylesheet" href="style-sheet.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <!--Template for menu/navigation -->
+    <template>
+        <!--Navigation bar-->
+        <nav id="navbar">
+            <!--<p>Visa sektion:</p>-->
+            <!--ids are being used by JS, not css-->
+            <!--<a> as descendant to <button> is not permitted, but is in this case necessary if JS is disabled-->
+            <button class="menu-start" type="button">STARTSIDA</button>
+            <button class="menu-about-me" type="button">OM MIG</button>
+            <button class="menu-skills" type="button"><span class="hide-in-mobile-view">MINA </span>KUNSKAPER</button>
+            <button class="menu-projects" type="button">PROJEKT<span class="hide-in-mobile-view">/PORTFOLIO</span></button>
+            <button class="menu-contact" type="button">KONTAKT</button>
+        </nav>
+    </template>
 </head>
 <body>
     <div id="container"> <!--Container for flex for content that is not footer-->
@@ -26,17 +41,8 @@
         <img id="palm-rigth" class="palm-leaves" src="images/palm-leaves-rigth.webp" alt="">
     </header>
 
-    <!--Navigation bar-->
-    <nav id="navbar">
-        <!--<p>Visa sektion:</p>-->
-        <!--ids are being used by JS, not css-->
-        <!--<a> as descendant to <button> is not permitted, but is in this case necessary if JS is disabled-->
-        <button id="menu-start" type="button">STARTSIDA</button>
-        <button id="menu-about-me" type="button">OM MIG</button>
-        <button id="menu-skills" type="button"><span class="hide-in-mobile-view">MINA </span>KUNSKAPER</button>
-        <button id="menu-projects" type="button">PROJEKT<span class="hide-in-mobile-view">/PORTFOLIO</span></button>
-        <button id="menu-contact" type="button">KONTAKT</button>
-    </nav>
+    <!--Calls the menu through web components-->
+    <menu-component id="menu-component-desktop" class="hide-in-mobile-view"></menu-component>
 
     <main>
         <!--Start section-->
@@ -54,7 +60,8 @@
             <!--Information section-->
             <article class="content-border-div">
                 <h1>Välkommen,</h1>
-                <p>Använd navigeringen ovan för att utforska sidan och lära dig mer om mig som blivande webbutvecklare.</p>
+                <p class="hide-in-mobile-view">Använd navigeringen ovan för att utforska sidan och lära dig mer om mig som blivande webbutvecklare.</p>
+                <p class="hide-in-desktop-view">Klicka på solen nedan för att utforska sidan och lära dig mer om mig som blivande webbutvecklare.</p>
                 <p>Jag hoppas att du finner något av intresse!</p>
             </article>
         </section>
@@ -74,7 +81,6 @@
             <!--Information section-->
             <article class="content-border-div">
                 <h1>Om mig</h1>
-                <!--<img id="self-image" src="images/IMG_5564-cut.png" alt="Jag">-->
                 <p>Hej, jag heter Frans och just nu studerar jag till webbutvecklare på TUC yrkeshögskola.</p>
                 <p>Jag skulle beskriva mig själv som en social och positiv person som lägger ett stort
                     engagemang i mina arbetsuppgifter och resultat. Jag har även lätt för att kommunicera
@@ -193,7 +199,7 @@
                     </section>
 
                     <h2 class="show-in-mobile">Kommunsida</h2>
-                    <p class="show-in-mobile">En hemsida för en fiktiv kommun skapad som en del av ett grupparbete. Mitt ansvarsområde var "Ledia jobb" med undersidor, vilket du kan se nedan:</p>
+                    <p class="show-in-mobile">En hemsida för en fiktiv kommun skapad som en del av ett grupparbete. Mitt ansvarsområde var "Lediga jobb" med undersidor, vilket du kan se nedan:</p>
                     <!--Project square - KOMMUN -->
                     <section class="square-base">
                         <!--Synligt innehåll i rutan-->
@@ -237,31 +243,40 @@
         </section>
     </main>
 </div>
-<!--footer with flamingos and waves-->
-<footer>
-    <img id="flamingo-left" class="flamingo" src="images/flamingo-left.webp" alt="flamingo image">
-    <img id="flamingo-rigth" class="flamingo" src="images/flamingo-rigth.webp" alt="flamingo image">
-    <svg id="wave-svg" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        
-        <defs>  
-            <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-                <stop stop-color="rgba(0, 255, 254, 1)" offset="0%"></stop>
-                <stop stop-color="rgba(255, 255, 255, 1)" offset="100%"></stop>
-            </linearGradient>
-        </defs>
-        <path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,0L17.1,8C34.3,16,69,32,103,42C137.1,52,171,56,206,52C240,
-        48,274,36,309,36C342.9,36,377,48,411,52C445.7,56,480,52,514,60C548.6,68,583,88,617,90C651.4,92,686,76,720,62C754.3,48,789,36,823,38C857.1,40,891,
-        56,926,62C960,68,994,64,1029,70C1062.9,76,1097,92,1131,94C1165.7,96,1200,84,1234,68C1268.6,52,1303,32,1337,24C1371.4,16,1406,20,1440,30C1474.3,40,
-        1509,56,1543,66C1577.1,76,1611,80,1646,86C1680,92,1714,100,1749,90C1782.9,80,1817,52,1851,34C1885.7,16,1920,8,1954,8C1988.6,8,2023,16,2057,26C2091.4,
-        36,2126,48,2160,46C2194.3,44,2229,28,2263,32C2297.1,36,2331,60,2366,72C2400,84,2434,84,2451,84L2468.6,84L2468.6,120L2451.4,120C2434.3,120,2400,120,2366,
-        120C2331.4,120,2297,120,2263,120C2228.6,120,2194,120,2160,120C2125.7,120,2091,120,2057,120C2022.9,120,1989,120,1954,120C1920,120,1886,120,1851,120C1817.1,
-        120,1783,120,1749,120C1714.3,120,1680,120,1646,120C1611.4,120,1577,120,1543,120C1508.6,120,1474,120,1440,120C1405.7,120,1371,120,1337,120C1302.9,120,1269,
-        120,1234,120C1200,120,1166,120,1131,120C1097.1,120,1063,120,1029,120C994.3,120,960,120,926,120C891.4,120,857,120,823,120C788.6,120,754,120,720,120C685.7,
-        120,651,120,617,120C582.9,120,549,120,514,120C480,120,446,120,411,120C377.1,120,343,120,309,120C274.3,120,240,120,206,120C171.4,120,137,120,103,120C68.6,
-        120,34,120,17,120L0,120Z"></path>
-    </svg>
-</footer>
 
+<div id="footer-and-menu-container">
+    <label id="mobile-menu-icon" class="hide-in-desktop-view" for="mobile-menu-toggle"><img src="images/sun.jpg"></label>
+    <input type="checkbox" id="mobile-menu-toggle" class="hide-in-desktop-view hide-in-mobile-view">
+
+    <!--footer with flamingos and waves-->
+    <footer>
+        <img id="flamingo-left" class="flamingo" src="images/flamingo-left.webp" alt="flamingo image">
+        <img id="flamingo-rigth" class="flamingo" src="images/flamingo-rigth.webp" alt="flamingo image">
+        <svg id="wave-svg" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            
+            <defs>  
+                <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
+                    <stop stop-color="rgba(0, 255, 254, 1)" offset="0%"></stop>
+                    <stop stop-color="rgba(255, 255, 255, 1)" offset="100%"></stop>
+                </linearGradient>
+            </defs>
+            <path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,0L17.1,8C34.3,16,69,32,103,42C137.1,52,171,56,206,52C240,
+            48,274,36,309,36C342.9,36,377,48,411,52C445.7,56,480,52,514,60C548.6,68,583,88,617,90C651.4,92,686,76,720,62C754.3,48,789,36,823,38C857.1,40,891,
+            56,926,62C960,68,994,64,1029,70C1062.9,76,1097,92,1131,94C1165.7,96,1200,84,1234,68C1268.6,52,1303,32,1337,24C1371.4,16,1406,20,1440,30C1474.3,40,
+            1509,56,1543,66C1577.1,76,1611,80,1646,86C1680,92,1714,100,1749,90C1782.9,80,1817,52,1851,34C1885.7,16,1920,8,1954,8C1988.6,8,2023,16,2057,26C2091.4,
+            36,2126,48,2160,46C2194.3,44,2229,28,2263,32C2297.1,36,2331,60,2366,72C2400,84,2434,84,2451,84L2468.6,84L2468.6,120L2451.4,120C2434.3,120,2400,120,2366,
+            120C2331.4,120,2297,120,2263,120C2228.6,120,2194,120,2160,120C2125.7,120,2091,120,2057,120C2022.9,120,1989,120,1954,120C1920,120,1886,120,1851,120C1817.1,
+            120,1783,120,1749,120C1714.3,120,1680,120,1646,120C1611.4,120,1577,120,1543,120C1508.6,120,1474,120,1440,120C1405.7,120,1371,120,1337,120C1302.9,120,1269,
+            120,1234,120C1200,120,1166,120,1131,120C1097.1,120,1063,120,1029,120C994.3,120,960,120,926,120C891.4,120,857,120,823,120C788.6,120,754,120,720,120C685.7,
+            120,651,120,617,120C582.9,120,549,120,514,120C480,120,446,120,411,120C377.1,120,343,120,309,120C274.3,120,240,120,206,120C171.4,120,137,120,103,120C68.6,
+            120,34,120,17,120L0,120Z"></path>
+        </svg>
+        
+    </footer>
+    <menu-component id="menu-component-mobile" class="hide-in-desktop-view"></menu-component>
+</div>
+
+    <script src="web-components.js"></script>
     <script src="frans183.js"></script>
 </body>
 </html>

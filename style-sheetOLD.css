@@ -443,7 +443,147 @@ footer {
 /*#endregion*/
 /* #region Media queries*/
 /*For really small phones (ex Iphone SE)*/
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 399px) {
+  /*#region basic rules*/
+  p {
+    margin: 3.5% 3.5% 0 3.5%;
+  }
+  li {
+    margin: 0 6% 3.5% 0;
+  }
+  /*details currently only used in "mina kunskaper"*/
+  details {
+    font-size: 1.2rem;
+    margin-top: 3.5%;
+    margin-left: 3.5%;
+  }
+  details p {
+    margin-left: 3.5%;
+  }
+  /*hides parts of menu options in mobile view*/
+  .hide-in-mobile-view {
+    display: none;
+  }
+  /*#endregion*/
+  /*#region header*/
+  header {
+    padding-top: 6%;
+  }
+  #logo {
+    width: 75%;
+    margin-top: 0;
+    margin-bottom: 5%;
+  }
+  /*#endregion*/
+  /*#region navbar*/
+  nav {
+    height: 100px;
+    width: 80%;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  /*"Visa sektion"-text*/
+  nav p {
+    display: none;
+  }
+  /*menu buttons*/
+  nav button {
+    width: 45%;
+    aspect-ratio: initial;
+    font-size: 0.8rem;
+  }
+  /*#endregion*/
+  /*#region information-sections*/
+  main {
+    padding-bottom: 0; /*to make footer keep distance from sections*/
+  }
+  .information-section {
+    width: 80%;
+    margin-top: 4%;
+    padding: 0 0.8% 0.8% 0.8%;
+  }
+  .x-icon {
+    width: 6%;
+  }
+  .favicon-black {
+    width: 10%;
+  }
+  hr {
+    margin: 1% 0 1% 0;
+  }
+  /*Shows text exaplaining projects in mobile*/
+  .show-in-mobile {
+    display: block;
+  }
+  /*self image in about section*/
+  #self-image {
+    width: 40%;
+    float: right;
+    margin: 1% 2% 0 2%;
+  }
+  /*#endregion*/
+  /*#region project-square*/
+  #project-square-container {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .square-base {
+    margin: 2% auto 2% auto;
+    height: unset;
+    width: 70%;
+    aspect-ratio: 1/1.4;
+    transition-property: none;
+  }
+  /*Removes the animation from square*/
+  .square-base:hover {
+    top: unset;
+  }
+  .square-content-visible {
+    transition-property: none;
+    top: unset;
+  }
+  .square-content-covered {
+    transition-property: none;
+    bottom: unset;
+  }
+  .square-base:hover {
+    box-shadow: none;
+  }
+  .square-base:hover .square-content-visible {
+    top: initial;
+  }
+  .square-base:hover .square-content-covered {
+    bottom: initial;
+  }
+  /*hides the description in the squares that cannnot be showed in mobile*/
+  .text-paragraph-square {
+    display: none;
+  }
+  /*#endregion*/
+  /*#region footer*/
+  footer {
+    margin: 0;
+    /*place-self: end center;*/
+  }
+  .flamingo {
+    width: 15%;
+    bottom: 0%;
+  }
+  #flamingo-rigth {
+    right: 2%;
+  }
+  /*#endregion*/
+}
+/*For phones*/
+@media screen and (min-width: 400px) and (max-width: 599px) {
   /*#region basic rules*/
   p {
     margin: 3.5% 3.5% 0 3.5%;
@@ -578,8 +718,8 @@ footer {
   }
   /*#endregion*/
 }
-/*For tablet potrait up (used as standard mobile verision of site)*/
-@media screen and (max-width: 899px) {
+/*For tablet potrait up*/
+@media screen and (min-width: 600px) and (max-width: 899px) {
   /*#region basic rules*/
   h2 {
     margin: 2%;
@@ -616,16 +756,15 @@ footer {
   /*#endregion*/
   /*#region navbar*/
   nav {
-    height: 30vh;
-    width: 100%;
-    padding: 0;
-    border: none;
-    background-color: #20fffe;
-    outline: #20fffe solid 2px;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 80%;
+    padding: 1% 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
   }
   /*"Visa sektion"-text*/
   nav p {
@@ -679,7 +818,7 @@ footer {
   .square-base {
     margin: 2% auto 2% auto;
     height: unset;
-    width: 70%;
+    width: 40%;
     aspect-ratio: 1/1.4;
     transition-property: none;
   }
@@ -709,20 +848,11 @@ footer {
     display: none;
   }
   /*#endregion*/
-  /*#region footer-and-menu-container*/
-  #footer-and-menu-container {
-    overflow-y: hidden;
-    height: 20vh; /*needs to be the same height as the footer when the menu is not shown*/
-    transition: height 0.5s;
-    position: relative;
-    margin-top: 25px;
-  }
-  /*#endregion */
   /*#region footer*/
   footer {
     margin: 0;
-    display: flex;
-    flex-direction: column;
+    margin-top: 8%;
+    /*place-self: end center;*/
   }
   .flamingo {
     width: 15%;
@@ -731,31 +861,11 @@ footer {
   #flamingo-rigth {
     right: 2%;
   }
-  #mobile-menu-icon {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    right: 0;
-    left: 0;
-    z-index: 20;
-    width: 60px;
-    height: 60px;
-    text-align: center;
-  }
-  #mobile-menu-icon img {
-    width: 100%;
-  }
-  div:has(> #mobile-menu-toggle:checked) {
-    height: 50vh;
-  }
   /*#endregion*/
 }
 /*Breakpoint for mobile version of site*/
 /*For tablet landscape up + small computers*/
 @media screen and (min-width: 900px) {
-  .hide-in-desktop-view {
-    display: none;
-  }
   /*#region navbar*/
   nav {
     width: 58%;
