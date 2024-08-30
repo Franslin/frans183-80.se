@@ -167,6 +167,12 @@ document.getElementById('mobile-menu-toggle').addEventListener("click", function
     })
 
 
+//to copy email address when clicked
+document.getElementById('email-address').addEventListener('click', function(){
+    navigator.clipboard.writeText
+                ("frans.lindstrom.webd23jon@edu.tucsweden.se");
+})
+
 
 //Log screen size to console
 let innerX = window.innerWidth;

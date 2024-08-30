@@ -258,6 +258,14 @@ hr{
 }
 /*#endregion*/
 
+#email-address{
+    cursor: pointer;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
 /*#region footer*/
 footer{
     position: relative;
