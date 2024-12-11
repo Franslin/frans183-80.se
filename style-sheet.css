@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: miami;
   src: url(fonts/Love-Strong-personal-Use-Regular/Love\ Strong\ Personal\ Use.ttf);
@@ -321,143 +320,6 @@ footer {
 }
 
 /*#endregion*/
-/*#region project squares*/
-/*Container för alla rutor (används för positionering)*/
-#project-square-container {
-  width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-/*Basen och grundregler för rutorna i sektion 2*/
-.square-base {
-  background-color: white;
-  width: 28%;
-  height: 25vw; /*Här används vw istället för % för att jag vill att elementets höjd ska vara relativt till sidans bredd*/
-  height: 22vw;
-  border-color: #000000;
-  border-style: solid;
-  border-width: 1.5px;
-  box-shadow: 0px 0px 0px #000000;
-  transition-property: box-shadow;
-  transition-duration: 0.2s;
-  margin: 1%;
-  margin-top: 2%;
-  position: relative; /*för att placera ut .square-cover-content*/
-  overflow: hidden;
-  z-index: 1;
-}
-
-/*Stilregler för h2 i rutorna*/
-.text-h2-square {
-  padding: 0px 10px 0px 10px;
-  margin: 8% 0 0 4%;
-  font-size: 1.5rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/*Stilregler för span-tagg som ger text bakgrundfärg*/
-.text-h2-square-markup {
-  background-color: #ffffff;
-  padding: 0.5%;
-}
-
-/*Stilregler för paragraferna i rutorna*/
-.text-paragraph-square {
-  padding: 0px 10px 0px 10px;
-  font-size: 0.9rem;
-  color: #000000;
-}
-
-/*Sektion i rutan med den synliga rubriken innan man hovrar med muspekaren*/
-.square-content-visible {
-  min-width: 100%; /*min och max används för att jag vill att sektionen alltid ska vara lika bred som .square-content*/
-  max-width: 100%;
-  min-height: 75%;
-  max-height: 75%;
-  position: absolute;
-  top: 0;
-  z-index: 2;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-user-drag: none;
-  /*Vad som händer när man hovrar med muspekaren*/
-  transition-property: top;
-  transition-duration: 0.2s;
-}
-
-/*background images for squares*/
-#las-flores-square-background {
-  background-image: url(images/las-flores.webp);
-}
-
-#kommun-square-background {
-  background-image: url(images/logo.png);
-}
-
-/*Sektion i rutan med den dolda paragrafen innan man hovrar med muspekaren*/
-.square-content-covered {
-  min-width: 100%;
-  max-width: 100%;
-  min-height: 25%;
-  max-height: 25%;
-  position: absolute;
-  bottom: 0;
-  z-index: 2;
-  /*Vad som händer när man hovrar med muspekaren*/
-  transition-property: bottom;
-  transition-duration: 0.2s;
-}
-
-/*Rutan som täcker den dolda paragrafen*/
-.square-cover-content {
-  background-color: #ffffff;
-  border-top: 1.8px solid black;
-  position: absolute;
-  width: 100%;
-  height: 25%;
-  bottom: 0;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/*Knapp för att ta sig vidare till artikeln*/
-.read-button {
-  width: 60%;
-  height: 50%;
-  margin: auto;
-  text-decoration: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  /*to center text in button*/
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  /*font-family: os-heavy; - gammal font*/
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/*När man hovrar med muspekaren på rutan (Detta skapar animations-effekten)*/
-.square-base:hover .square-content-visible {
-  top: -75%;
-}
-
-.square-base:hover .square-content-covered {
-  bottom: 70%;
-}
-
-.square-base:hover {
-  box-shadow: 0px 0px 15px #00f0e1;
-}
-
-/*#endregion*/
 /* #region Media queries*/
 /*For really small phones (ex Iphone SE)*/
 @media screen and (max-width: 599px) {
@@ -689,43 +551,6 @@ footer {
     display: block;
   }
   /*#endregion*/
-  /*#region project-square*/
-  #project-square-container {
-    flex-direction: column;
-  }
-  .square-base {
-    margin: 2% auto 2% auto;
-    height: unset;
-    width: 70%;
-    aspect-ratio: 1/1.4;
-    transition-property: none;
-  }
-  /*Removes the animation from square*/
-  .square-base:hover {
-    top: unset;
-  }
-  .square-content-visible {
-    transition-property: none;
-    top: unset;
-  }
-  .square-content-covered {
-    transition-property: none;
-    bottom: unset;
-  }
-  .square-base:hover {
-    box-shadow: none;
-  }
-  .square-base:hover .square-content-visible {
-    top: initial;
-  }
-  .square-base:hover .square-content-covered {
-    bottom: initial;
-  }
-  /*hides the description in the squares that cannnot be showed in mobile*/
-  .text-paragraph-square {
-    display: none;
-  }
-  /*#endregion*/
   /*#region footer-and-menu-container*/
   #footer-and-menu-container {
     overflow-y: hidden;
@@ -789,27 +614,12 @@ footer {
     margin-right: 1%;
   }
   /*#endregion*/
-  /*#region project-squares*/
-  /*h2 in squares*/
-  .text-h2-square {
-    padding: 0px 10px 0px 10px;
-    font-size: 1.2rem;
-  }
-  /*the text/paragraphs in squares*/
-  .text-paragraph-square {
-    font-size: 0.8rem;
-  }
-  /*show-project button*/
-  .read-button {
-    font-size: 1rem;
-  }
   /*self image in about section*/
   #self-image {
     width: 30%;
     float: right;
     margin: 1% 2% 0 1%;
   }
-  /*#endregion*/
 }
 /*For desktop up*/
 @media screen and (min-width: 1200px) {
@@ -829,22 +639,6 @@ footer {
     margin-right: 1%;
   }
   /*#endregion*/
-  /*#region project-squares*/
-  /*h2 in squares*/
-  .text-h2-square {
-    padding: 0px 0px 0px 10px;
-    font-size: 1.3rem;
-  }
-  /*the text/paragraphs in squares*/
-  .text-paragraph-square {
-    font-size: 0.9rem;
-  }
-  /*show-project button*/
-  .read-button {
-    font-size: 1rem;
-    /*padding-top: 2%;*/
-  }
-  /*#endregion*/
 }
 /*For big desktop*/
 @media screen and (min-width: 1800px) {
@@ -862,22 +656,6 @@ footer {
     font-size: 0.6rem;
     margin-left: 1%;
     margin-right: 1%;
-  }
-  /*#endregion*/
-  /*#region project-squares*/
-  /*h2 in squares*/
-  .text-h2-square {
-    padding: 0px 10px 0px 10px;
-    font-size: 1.5rem;
-  }
-  /*the text/paragraphs in squares*/
-  .text-paragraph-square {
-    font-size: 0.9rem;
-  }
-  /*show-project button*/
-  .read-button {
-    font-size: 1rem;
-    padding-top: 2%;
   }
   /*#endregion*/
   body {
