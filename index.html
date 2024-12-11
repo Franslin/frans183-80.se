@@ -23,7 +23,6 @@
         <nav id="navbar">
             <!--<p>Visa sektion:</p>-->
             <!--ids are being used by JS, not css-->
-            <!--<a> as descendant to <button> is not permitted, but is in this case necessary if JS is disabled-->
             <button class="menu-start" type="button">STARTSIDA</button>
             <button class="menu-about-me" type="button">OM MIG</button>
             <button class="menu-skills" type="button"><span class="hide-in-mobile-view">MINA </span>KUNSKAPER</button>
@@ -36,9 +35,18 @@
     <div id="container"> <!--Container for flex for content that is not footer-->
     <!--Header consisting of logo and palm-leaves-->
     <header>
-        <img id="palm-left" class="palm-leaves" src="images/palm-leaves-left.webp" alt="">
-        <img id="logo" src="images/logo-new-blue.png" alt="Frans Lindström">
-        <img id="palm-rigth" class="palm-leaves" src="images/palm-leaves-rigth.webp" alt="">
+        <picture>
+            <source id="palm-left" class="palm-leaves" type="image/webp" srcset="images/palm-leaves-left.webp">    
+            <img id="palm-left" class="palm-leaves" src="images/palm-leaves-left.jpg" alt="">
+        </picture>
+        <picture id="picture-logo-container">
+            <source id="logo" type="image/webp" srcset="images/logo-webp.webp">
+            <img id="logo" src="images/logo-new-blue.png" alt="Frans Lindström">
+        </picture>
+        <picture>
+            <source id="palm-rigth" class="palm-leaves" type="image/webp" srcset="images/palm-leaves-rigth.webp">
+            <img id="palm-rigth" class="palm-leaves" src="images/palm-leaves-rigth.jpg" alt="">
+        </picture>
     </header>
 
     <!--Calls the menu through web components-->
@@ -87,13 +95,13 @@
                     med andra och gillar att lösa problem.</p>
                 <p>Webbutveckling passar mig väldigt bra tack vare tänkandet som krävs för att
                 programmera samt att det även finns möjlighet till att vara kreativ och vara
-                med och skapa de visuella delarna av webbsidor.</p>
+                med och skapa de visuella delarna av webbsidor. Med andra ord så är det ett väldigt varierande arbete.</p>
                 <p>Som du ser så tog jag lite kreativa friheter när jag skapade den här sidan.
                     Temat är inspirerad av ett 80-tals Miami.</p>
                 <p>Istället för att göra en vanlig sida så ville jag pröva något nytt med designen och se
                     vad resultatet kunde bli. För detta tog jag inspiration av media som Miami Vice, Scarface
                     och Eminence Front.</p>
-                <p>Jag kan såklart även bygga mer neutrala och alldagliga webbsidor om det är vad som efterfrågas.</p>
+                <p>Jag kan såklart även bygga mer neutrala och <span id="line-through">proffesionella</span> vanliga webbsidor om det är vad som efterfrågas.</p>
             </article>
         </section>
 
@@ -180,45 +188,46 @@
                     arbeten jag har gjort!</p>
                 <p class="hide-in-mobile-view">Nedan finner du mina projekt:</p>
 
-                <div id="project-square-container">
+                <details>
+                    <summary>Frans183.se - denna fantastiska sida🦩</summary>
+                    <p>Som du kanske läste under "Om mig" så är den här sidan inspirerad av ett 80-tals Miami
+                        baserat på media som Miami Vice, Scarface och Eminence Front.</p>
+                    <p>Denna sida är byggd helt i HTML CSS och Javascript. Trots att det är bra att 
+                        kunna många ramverk och verktyg så tycker jag att det är lika viktigt att inte behöva använda
+                        sig av dem, utan att man har tillräckliga kunskaper och kan klara sig själv.
+                    </p>
+                    <p>Sättet den här sidan är byggd på, där innehållet för varje menyaltnernativ är dolt med Javascript,
+                        skulle egentligen passa bättre som en React applikation som bara laddar innehållet på användarens
+                        begäran. Jag har övervägt att bygga om den, men eftersom jag håller på med ett annat React projekt 
+                        just nu så avvaktar jag lite (jag är dessutom ganska nöjd med sidan som den är).
+                    </p>
+                </details>
 
-                    <h2 class="show-in-mobile">Las Flores</h2>
-                    <p class="show-in-mobile">Nedan finner du en testdesign av en webbshops startsida.</p>
-                    <!--Projekt square - LAS FLORES-->
-                    <section class="square-base">
-                        <!--Synligt innehåll i rutan-->
-                        <section id="las-flores-square-background" class="square-content-visible">
-                            <h2 class="text-h2-square"><span class="text-h2-square-markup">&nbsp;Las Flores&nbsp;</span></h2>
-                        </section>
-                        <!--Dolt innehåll i rutan-->
-                        <section class="square-content-covered">
-                            <p class="text-paragraph-square">En testdesign av en webbshops startsida</p>
-                        </section>
-                        <!--Sektion som täcker det dolda innehållet-->
-                        <section class="square-cover-content">
-                            <a class="read-button" href="https://frans183.se/las-flores/index.html" target="_blank">VISA</a>
-                        </section>
-                    </section>
+                <details>
+                    <summary>Las Flores - design av startsida på webbshop🌺</summary>
+                    <p>Detta är resultatet av en idé jag fick på en design till en webbshops startsida som jag ville bygga.</p>
+                    <p>Eftersom jag var kanska tidigt i min utbildning så är den byggd i ren HTML, CSS och Javascript.</p>
+                    <p>Alla bilderna är genererade av AI, vilket är ett ganska tacksamt verktyg när man vill bygga mockups på det här sättet.</p>
+                    <p><a href="https://www.frans183.se/las-flores/index.html">Visa sida ></a></p>
+                </details>
 
-                    <h2 class="show-in-mobile">Kommunsida</h2>
-                    <p class="show-in-mobile">En hemsida för en fiktiv kommun skapad som en del av ett grupparbete. Mitt ansvarsområde var "Lediga jobb" med undersidor, vilket du kan se nedan:</p>
-                    <!--Project square - KOMMUN -->
-                    <section class="square-base">
-                        <!--Synligt innehåll i rutan-->
-                        <section id="kommun-square-background" class="square-content-visible">
-                            <h2 class="text-h2-square"><span class="text-h2-square-markup">&nbsp;Kommun-&nbsp;<br>&nbsp;sida&nbsp;</span></h2>
-                        </section>
-                        <!--Dolt innehåll i rutan-->
-                        <section class="square-content-covered">
-                            <p class="text-paragraph-square">En hemsida för en fiktiv kommun skapad som en del av ett grupparbete.</p>
-                            <p class="text-paragraph-square">Mitt ansvarsområde var "Ledia jobb" med undersidor.</p>
-                        </section>
-                        <!--Sektion som täcker det dolda innehållet-->
-                        <section class="square-cover-content">
-                            <a class="read-button" href="https://frans183.se/kommun/index.html" target="_blank">VISA</a>
-                        </section>
-                    </section>
-                </div>
+                <details>
+                    <summary>SNDTRCK - komplett webbshop med C#</summary>
+                    <p>Denna webbshop med vinylskivor byggde jag och en kurskamrat som vårt examensarbete.</p>
+                    <p>Webbplatsen är byggd från grunden i Razor MVC och har ett fullt fungerande backend med
+                        administration för produkter och beställningar.
+                    </p>
+                    <p>Medan vi båda hjälptes åt med varandras delar så ansvarade jag främst för:</p>
+                    <ul>
+                        <li>Design och utveckling av frontend</li>
+                        <li>Kundkorgs- och kassafunktionalitet med cookies samt egna CRUD-operationer för dessa</li>
+                        <li>Sökfunktion med live-förslag där html genereras i en kontroller i backend och sedan 
+                            levereras till webbläsaren med AJAX (upptäckte dock senare att Fetch hade varit mycket enklare att använda)</li>
+                        <li>SQL-databas och optimering av denna med hjälp av index och anpassade querys</li>
+                    </ul>
+                    <p>Tyvärr ligger projektet inte uppe för tillfället då jag behöver hitta ett smidigt sätt att hosta det på.</p>
+                </details>
+
             </article>
         </section>
 
@@ -252,11 +261,17 @@
 
     <!--footer with flamingos and waves-->
     <footer>
-        <img id="flamingo-left" class="flamingo" src="images/flamingo-left.webp" alt="flamingo image">
-        <img id="flamingo-rigth" class="flamingo" src="images/flamingo-rigth.webp" alt="flamingo image">
+        <picture>
+            <source id="flamingo-left" class="flamingo" type="image/webp" srcset="images/flamingo-left.webp">    
+            <img id="flamingo-left" class="flamingo" src="images/flamingo-left.png" alt="flamingo image">
+        </picture>
+        <picture>
+            <source id="flamingo-right" class="flamingo" type="image/webp" srcset="images/flamingo-rigth.webp">    
+            <img id="flamingo-rigth" class="flamingo" src="images/flamingo-rigth.png" alt="flamingo image">
+        </picture>
         <svg id="wave-svg" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
             
-            <defs>  
+            <defs>
                 <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
                     <stop stop-color="rgba(0, 255, 254, 1)" offset="0%"></stop>
                     <stop stop-color="rgba(255, 255, 255, 1)" offset="100%"></stop>

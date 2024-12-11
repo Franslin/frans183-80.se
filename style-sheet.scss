@@ -67,14 +67,25 @@ p{
     font-size: 0.9rem;
 }
 
+#line-through{
+    text-decoration: line-through;
+}
+
 li{
     font-weight: 500;
     font-size: 0.9rem;
+    margin-top: 2%;
 }
 
 a{
     color: initial;
     -webkit-user-drag: none;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover{
+        text-decoration: underline;
+    }
 }
 
 details{
@@ -122,18 +133,20 @@ header{
     -webkit-user-drag: none;
 }
 
-#logo{
-    width: 45%;
-    display: block;
-    aspect-ratio: initial;
-    margin: auto;
-    margin-top: 3%; /*before 6%*/
-    margin-bottom: 2%;
+#picture-logo-container{
+    #logo{
+        width: 45%;
+        display: block;
+        aspect-ratio: initial;
+        margin: auto;
+        margin-top: 3%; /*before 6%*/
+        margin-bottom: 2%;
 
-    position: relative;
+        position: relative;
 
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+    }
 }
 
 .palm-leaves{
@@ -476,11 +489,12 @@ footer{
         header{
             padding-top: 6%;
         }
-        
-        #logo{
-            width: 75%;
-            margin-top: 0;
-            margin-bottom: 5%;
+        #picture-logo-container{
+            #logo{
+                width: 75%;
+                margin-top: 0;
+                margin-bottom: 5%;
+            }
         }
         /*#endregion*/
         
@@ -638,12 +652,14 @@ footer{
         header{
             padding-top: 6%;
         }
-        
-        #logo{
-            width: 75%;
-            margin-top: 0;
-            margin-bottom: 5%;
+        #picture-logo-container{
+            #logo{
+                width: 75%;
+                margin-top: 0;
+                margin-bottom: 5%;
+            }            
         }
+
         /*#endregion*/
         
         /*#region navbar*/
@@ -882,8 +898,8 @@ footer{
         /*#region project-squares*/
         /*h2 in squares*/
         .text-h2-square{
-        padding: 0px 10px 0px 10px;
-        font-size: 1.5rem;
+        padding: 0px 0px 0px 10px;
+        font-size: 1.3rem;
         }
 
         /*the text/paragraphs in squares*/

@@ -63,14 +63,24 @@ p {
   font-size: 0.9rem;
 }
 
+#line-through {
+  text-decoration: line-through;
+}
+
 li {
   font-weight: 500;
   font-size: 0.9rem;
+  margin-top: 2%;
 }
 
 a {
   color: initial;
   -webkit-user-drag: none;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 details {
@@ -126,7 +136,7 @@ header {
   -webkit-user-drag: none;
 }
 
-#logo {
+#picture-logo-container #logo {
   width: 45%;
   display: block;
   aspect-ratio: initial;
@@ -476,7 +486,7 @@ footer {
   header {
     padding-top: 6%;
   }
-  #logo {
+  #picture-logo-container #logo {
     width: 75%;
     margin-top: 0;
     margin-bottom: 5%;
@@ -615,7 +625,7 @@ footer {
   header {
     padding-top: 6%;
   }
-  #logo {
+  #picture-logo-container #logo {
     width: 75%;
     margin-top: 0;
     margin-bottom: 5%;
@@ -822,8 +832,8 @@ footer {
   /*#region project-squares*/
   /*h2 in squares*/
   .text-h2-square {
-    padding: 0px 10px 0px 10px;
-    font-size: 1.5rem;
+    padding: 0px 0px 0px 10px;
+    font-size: 1.3rem;
   }
   /*the text/paragraphs in squares*/
   .text-paragraph-square {
