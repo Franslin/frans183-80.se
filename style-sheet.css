@@ -88,9 +88,7 @@ details {
   margin: 1%;
   margin-top: 2%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 summary {
