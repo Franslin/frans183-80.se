@@ -4,8 +4,6 @@
 //Ändra till dvw
 //Jultema
 //Animation av details
-//Ta bort onödig gammal css av projekt
-//Picture element
 
 
 //User menu options

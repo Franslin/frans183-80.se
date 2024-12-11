@@ -94,6 +94,7 @@ details{
     margin: 1%;
     margin-top: 2%;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
 }
 summary{
     cursor: pointer;
@@ -324,14 +325,21 @@ footer{
         
         /*#region basic rules*/
         p{
-            margin: 3.5% 3.5% 0 3.5%;
+            margin: 6% 3.5% 0 3.5%;
+            font-size: 1rem;
+        }
+
+        details{
+            p{
+                margin: 6% 3.5% 0 3.5%;
+            }
         }
 
         li{
             margin: 0 6% 3.5% 0;
+            font-size: 1rem;
         }
 
-        /*details currently only used in "mina kunskaper"*/
         details{
             font-size: 1.2rem;
             margin-top: 3.5%;
@@ -428,41 +436,6 @@ footer{
             display: block;
         }
         /*#endregion*/
-
-        /*#region project-square*/
-        .square-base{
-            margin: 2% auto 2% auto;
-            height: unset;
-            width: 70%;
-            aspect-ratio: 1 / 1.4;
-            transition-property: none;
-        }
-        /*Removes the animation from square*/
-        .square-base:hover{
-            top: unset;
-        }
-        .square-content-visible{
-            transition-property: none;
-            top: unset;
-        }
-        .square-content-covered{
-            transition-property: none;
-            bottom: unset;
-        }
-        .square-base:hover{
-            box-shadow: none;
-        }
-        .square-base:hover .square-content-visible{
-            top: initial;
-        }
-        .square-base:hover .square-content-covered{
-            bottom: initial;
-        }
-        /*hides the description in the squares that cannnot be showed in mobile*/
-        .text-paragraph-square{
-            display: none;
-        }
-        /*#endregion*/
         
         /*#region footer*/
         footer{
@@ -488,13 +461,20 @@ footer{
         }
         p{
             margin: 2%;
+            font-size: 1rem;
+        }
+
+        details{
+            p{
+                margin: 6% 3.5% 0 3.5%;
+            }
         }
 
         li{
             margin: 0 6% 2% 0;
+            font-size: 1rem;
         }
 
-        /*details currently only used in "mina kunskaper"*/
         details{
             font-size: 1.2rem;
             margin-top: 3.5%;
