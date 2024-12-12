@@ -2,7 +2,6 @@
 //Ta bort ram för max storlek
 //Ändra så att mobilmenyn går över innehållet
 //Ändra till dvw
-//Jultema
 //Animation av details
 
 
