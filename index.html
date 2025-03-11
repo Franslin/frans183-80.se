@@ -195,9 +195,9 @@
                         sig av dem, utan att man har tillräckliga kunskaper för att klara sig själv.
                     </p>
                     <p>Sättet den här sidan är byggd på, där innehållet för varje menyaltnernativ är dolt med Javascript,
-                        skulle egentligen passa bättre som en React applikation som bara laddar innehållet på användarens
-                        begäran. Jag har övervägt att bygga om den, men eftersom jag håller på med ett annat React projekt 
-                        just nu så avvaktar jag lite (jag är dessutom ganska nöjd med sidan som den är).
+                        skulle egentligen passa bättre som en SPA innehållet laddas på användarens begäran. 
+                        Jag har övervägt att bygga om den, men eftersom jag håller på med ett annat React projekt 
+                        just nu så avvaktar jag lite.
                     </p>
                 </details>
 
@@ -211,19 +211,39 @@
 
                 <details>
                     <summary>SNDTRCK - komplett webbshop i Razor MVC</summary>
-                    <p>Denna webbshop med vinylskivor byggde jag och en kurskamrat som vårt examensarbete.</p>
+                    <p>Denna webbshop med vinylskivor byggde jag och en kurskamrat som vårt examensarbete för utbildningen till webbutvecklare.</p>
                     <p>Webbplatsen är byggd från grunden i Razor MVC och har ett fullt fungerande backend med
                         administration för produkter och beställningar.
                     </p>
                     <p>Medan vi båda hjälptes åt med varandras delar så ansvarade jag främst för:</p>
                     <ul>
                         <li>Design och utveckling av frontend</li>
-                        <li>Kundkorgs- och kassafunktionalitet i ren Javascript. Detta med cookies och CRUD-operationer för dessa</li>
+                        <li>Kundkorgs- och kassafunktionalitet i vanilla Javascript. Detta med cookies och CRUD-operationer för dessa</li>
                         <li>Sökfunktion med live-förslag där html genereras i en kontroller i backend och sedan 
                             levereras till webbläsaren med AJAX.</li>
                         <li>SQL-databas och optimering av denna med hjälp av index och anpassade querys</li>
                     </ul>
-                    <p>Tyvärr ligger projektet inte uppe för tillfället då jag behöver hitta ett smidigt sätt att hosta det på.</p>
+                    <p>Projektet ligger inte live för tillfället, men här är några bilder för att få en uppfattning av utseendet:</p>
+                    <picture>
+                        <source id="sndtrck-home-img" class="sndtrck-image" type="image/webp" srcset="images/sndtrck-home.webp">    
+                        <img id="sndtrck-home-img" class="sndtrck-image" src="images/sndtrck-home.png" decoding="async" alt="Startsida">
+                    </picture>                    
+                    <picture>
+                        <source id="sndtrck-footer-img" class="sndtrck-image" type="image/webp" srcset="images/sndtrck-footer.webp">    
+                        <img id="sndtrck-footer-img" class="sndtrck-image" src="images/sndtrck-footer.png" decoding="async" alt="Webbplatsens footer">
+                    </picture>
+                    <div id="sndtrck-img-container">
+                        <picture>
+                            <source id="sndtrck-search-img" class="sndtrck-image" type="image/webp" srcset="images/sndtrck-search.webp">    
+                            <img id="sndtrck-search-img" class="sndtrck-image" src="images/sndtrck-search.png" decoding="async" alt="Sökfunktion">
+                        </picture>
+                        <picture>
+                            <source id="sndtrck-menu-img" class="sndtrck-image" type="image/webp" srcset="images/sndtrck-menu.webp">    
+                            <img id="sndtrck-menu-img" class="sndtrck-image" src="images/sndtrck-menu.png" decoding="async" alt="Mobilmeny">
+                        </picture>
+                    </div>
+
+                    
                 </details>
 
                 <details>

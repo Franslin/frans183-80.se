@@ -275,6 +275,29 @@ hr{
     border: 1.5px solid black;
     aspect-ratio: initial;
 }
+
+/*Sndtrck images in the project section*/
+.sndtrck-image{
+    display: block;
+    width: 95%;
+    margin: 1rem auto 0rem auto;
+}
+
+#sndtrck-img-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#sndtrck-search-img{
+    max-width: 300px;
+}
+
+#sndtrck-menu-img{
+    max-width: 300px;
+}
+
 /*#endregion*/
 
 #email-address{
