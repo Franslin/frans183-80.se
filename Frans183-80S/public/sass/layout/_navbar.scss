@@ -1,0 +1,64 @@
+@use '../abstracts/' as a;
+
+nav{
+    background-color: #f9efe4;
+    border: solid black 1.8px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+    //Mobile menu
+    @include a.max-899-screen{
+        height: 30vh;
+        width: 100%;
+        padding: 0;
+        border: none;
+        background-color: #20fffe;
+        outline: #20fffe solid 2px;
+        flex-direction: column;
+        justify-content: space-around;
+
+    }
+
+    //Desktop menu
+    @include a.min-900-screen{
+        padding: 0 1% 0 1%;
+        height: 40px;
+        width: a.$base-with-desktop;
+        padding: 0 2% 0 2%;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+//"Visa sektion"-text
+nav p{
+    margin: 0;
+    display: none;
+
+    @include a.min-900-screen{
+        display: initial;
+    }
+}
+
+/*menu buttons*/
+nav button{
+
+    //Mobile nav
+    @include a.max-899-screen{
+        width: 40%;
+        max-width: 20rem;
+        aspect-ratio: initial;
+        font-size: 1.8rem;
+        margin: 1%;
+    }
+
+    //Desktop nav
+    @include a.min-900-screen{
+        font-size: 1.3rem;
+    }
+}
+
+#mobile-menu-toggle{
+    display: none;
+}

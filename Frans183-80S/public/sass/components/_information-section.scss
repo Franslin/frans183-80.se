@@ -1,0 +1,134 @@
+@use '../abstracts/' as a;
+
+main{
+
+    @include a.max-899-screen{
+        //max 899
+        padding-bottom: 0; /*to make footer keep distance from sections*/
+    }
+}
+
+/*base*/
+.information-section{
+    margin-bottom: 2%;
+    border: 1.5px solid black;
+    background-color: #f9efe4;
+    margin: auto;
+
+    width: a.$base-with-mobile;
+    margin-top: 4%;
+    padding: 0 0.8% 0.8% 0.8%;
+
+    @include a.min-900-screen{
+        width: 60%;
+        width: a.$base-with-desktop;
+        margin-top: 2%;
+        padding: 0 0.5% 0.5% 0.5%;
+    }
+}
+
+/*adds a black border*/
+.content-border-div{
+    border: 1.5px solid black;
+    padding: 1% 0 1% 0%;
+}
+
+/*contains the X-button, the lines and the logo at the top of the section*/
+.section-flex-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.x-icon{
+    aspect-ratio: initial;
+    margin: 1% 1% 0.5% 0;
+    padding: 0.2%;
+    border: 1.5px solid black;
+    -webkit-user-drag: none;
+    user-select: none;
+    cursor: pointer;
+
+    width: 4%;
+
+    @include a.min-900-screen{
+        width: 3%;
+    }
+}
+
+.x-icon:active{
+    background-color: #e1dad2;
+}
+
+/*Necessary to position hr-element as a group*/
+.hr-container{
+    width: 100%;
+}
+
+/*black lines*/
+hr{
+    height:2px;
+    width: 100%;
+    text-align: right;
+    border-width: 0;
+    /*margin-left: auto;*/
+    color:black;
+    background-color:black;
+
+    margin: 1% 0 1% 0;
+
+    @include a.min-900-screen{
+        margin: 0.5% 0 0.5% 0;
+    }
+
+}
+
+/*small black logo*/
+.favicon-black{
+    padding: 1% 0 1% 1%;
+    aspect-ratio: initial;
+    -webkit-user-drag: none;
+    user-select: none;
+
+    width: 6%;
+
+    @include a.min-900-screen{
+        width: 5%;
+    }
+
+}
+
+/*Shows text exaplaining projects in mobile*/
+.show-in-mobile{
+    display: none;
+}
+
+/*Sndtrck images in the project section*/
+.sndtrck-image{
+    display: block;
+    width: 95%;
+    margin: 1rem auto 0rem auto;
+}
+
+#sndtrck-img-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#sndtrck-search-img{
+    max-width: 300px;
+}
+
+#sndtrck-menu-img{
+    max-width: 300px;
+}
+
+#email-address{
+    cursor: pointer;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}

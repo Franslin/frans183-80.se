@@ -1,0 +1,68 @@
+// Centraliserade brytpunkter
+/*$breakpoints : (
+    "600" : 600,
+    "900" : 900,
+    "1200" : 1200,
+    "1800" : 1800
+);
+
+// Flexibel mixin
+@mixin respond($size, $type: "max") {
+    $breakpoint: map-get($breakpoints, $size);
+    @if $breakpoint {
+      @if $type == "max" {
+        @media (max-width: $breakpoint) {
+          @content;
+        }
+      } @else if $type == "min" {
+        @media (min-width: $breakpoint) {
+          @content;
+        }
+      }
+    } @else {
+      @warn "Breakpoint #{ size} not found!";
+    }
+  }*/
+
+  //For phones
+  //(need no media queries since the css is written mobile-first)
+
+  //Tablet potrait up
+  @mixin min-600-screen {
+    @media (min-width: 600px) {
+      @content;
+    }
+  }
+
+  //For styles that only are applicable in mobile view (for example if the element is hidden in desktop)
+  @mixin max-899-screen {
+    @media screen and (max-width: 899px) {
+      @content;
+    }
+  }
+  @mixin min-600-max-899-screen {
+    @media (min-width: 600) and (max-width: 899px) {
+      @content;
+    }
+  }
+
+  //Tablet landscape + small computers
+  @mixin min-900-screen {
+    @media (min-width: 900px) {
+      @content;
+    }
+  }
+
+  //Desktop
+  @mixin min-1200-screen {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  //large desktop
+  @mixin min-1800-screen {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }

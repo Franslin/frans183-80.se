@@ -1,0 +1,55 @@
+@use '../abstracts/' as a;
+
+header{
+    width: 100%;
+    height: fit-content;
+    -webkit-user-drag: none;
+
+    @include a.max-899-screen{
+        //max 899
+        padding-top: 2%;
+    }
+}
+
+#picture-logo-container{
+    #logo{
+        width: 45%;
+        display: block;
+        aspect-ratio: initial;
+        margin: auto;
+        margin-top: 3%; /*before 6%*/
+        margin-bottom: 2%;
+
+        position: relative;
+
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+
+        @include a.max-899-screen{
+            //max 899
+            width: 75%;
+            margin-top: 0;
+            margin-bottom: 5%;
+        }
+    }
+}
+
+.palm-leaves{
+    width: 20%; /*uncut leves*/
+    aspect-ratio: initial;
+    position: absolute;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    z-index: -1;
+}
+
+#palm-left{
+    left: -20px;
+    left: -1.3%; /*uncut leves*/
+    top: 0;
+}
+#palm-rigth{
+    right: -20px;
+    right: -1.3%;  /*uncut leves*/
+    top: 0;
+}

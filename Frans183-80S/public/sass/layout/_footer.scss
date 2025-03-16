@@ -1,0 +1,88 @@
+@use '../abstracts/' as a;
+
+footer{
+    position: relative;
+    height: 20vh;
+    /*margin-top: 24vh;*/
+    margin-top: 10vh;
+    z-index: 1;
+    width: 100%;
+
+    @include a.max-899-screen{
+        //max 899
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.flamingo{
+    aspect-ratio: initial;
+    position: absolute;
+    user-select: none;
+    -webkit-user-drag: none;
+
+    width: 15%;
+    bottom: -0%;
+
+    @include a.min-900-screen{
+        width: 8.5%;
+        bottom: 14%;
+    }
+}
+
+#flamingo-left{
+    left: 7%;
+}
+
+#flamingo-rigth{
+    right: 2%;
+
+    @include a.min-900-screen{
+        right: 5%;
+    }
+}
+
+#wave-svg{
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+}
+
+#footer-and-menu-container{
+    @include a.max-899-screen{
+        overflow-y: hidden;
+        height: 20vh; /*needs to be the same height as the footer when the menu is not shown*/
+        transition: height 0.2s ease-out;
+        position: relative;
+        margin-top: 25px;
+    }
+
+}
+
+#mobile-menu-icon{
+    @include a.max-899-screen{
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        right: 0;
+        left: 0;
+        z-index: 20;
+        width: 7rem;
+        text-align: center;
+
+        img{
+            width: 100%;
+        }
+    }
+
+
+}
+
+#footer-and-menu-container:has(> #mobile-menu-toggle:checked)
+{
+    @include a.max-899-screen{
+        height: 50vh;
+    }
+}

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C2WWXRP42P"></script>
+    <script>
+        /*window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C2WWXRP42P');*/
+    </script>-->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Frans Lindström</title>
+    <link rel="stylesheet" href="./public/sass/main.scss" type="text/css">
+    <link rel="icon" type="icon" href="/images/favicon.png">
+
+    <!--Template for menu/navigation -->
+    <template>
+        <!--Navigation bar-->
+        <nav id="navbar">
+            <!--<p>Visa sektion:</p>-->
+            <!--ids are being used by JS, not css-->
+            <button class="menu-start" type="button" aria-label="Startsida">STARTSIDA</button>
+            <button class="menu-about-me" type="button" aria-label="Om mig">OM MIG</button>
+            <button class="menu-skills" type="button" aria-label="Kunskaper">KUNSKAPER</button>
+            <button class="menu-projects" type="button" aria-label="Projekt">PROJEKT</button>
+            <button class="menu-contact" type="button" aria-label="Kontakt">KONTAKT</button>
+        </nav>
+    </template>
+</head>
+<body>
+    <div id="container"> <!--Container for flex for content that is not footer-->
+    <!--Header consisting of logo and palm-leaves-->
+    <header>
+        <picture>
+            <source id="palm-left" class="palm-leaves" type="image/webp" srcset="/images/palm-leaves-left.webp">    
+            <img id="palm-left" class="palm-leaves" src="/images/palm-leaves-left.jpg" alt="">
+        </picture>
+        <picture id="picture-logo-container">
+            <source id="logo" type="image/webp" srcset="/images/logo-webp.webp">
+            <img id="logo" src="/images/logo-new-blue.png" alt="Frans Lindström">
+        </picture>
+        <picture>
+            <source id="palm-rigth" class="palm-leaves" type="image/webp" srcset="/images/palm-leaves-rigth.webp">
+            <img id="palm-rigth" class="palm-leaves" src="/images/palm-leaves-rigth.jpg" alt="">
+        </picture>
+    </header>
+
+    <!--Calls the menu through web components-->
+    <menu-component id="menu-component-desktop" class="hide-in-mobile-view"></menu-component>
+
+    <main>
+        <!--Start section-->
+        <section id="start-section" class="information-section">
+            <!--Blog-header section-->
+            <div class="section-flex-container">
+                <img id="x-icon" class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                <div class="hr-container">
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+                <img class="favicon-black" src="/images/favicon-black.png" alt="">
+            </div>
+            <!--Information section-->
+            <article class="content-border-div">
+                <h1>Välkommen,</h1>
+                <p class="hide-in-mobile-view">Använd navigeringen ovan för att utforska sidan och lära dig mer om mig som webbutvecklare.</p>
+                <p class="hide-in-desktop-view">Klicka på solen nedan för att utforska sidan och lära dig mer om mig som webbutvecklare.</p>
+                <p>Jag hoppas att du finner något av intresse!</p>
+            </article>
+        </section>
+
+        <!--"Om mig" section-->
+        <section id="about-me-section" class="information-section">
+            <!--Blog-header section-->
+            <div class="section-flex-container">
+                <img class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                <div class="hr-container">
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+                <img class="favicon-black" src="/images/favicon-black.png" alt="">
+            </div>
+            <!--Information section-->
+            <article class="content-border-div">
+                <h1>Om mig</h1>
+                <p>Hej, jag heter Frans och just nu studerar jag till webbutvecklare på TUC yrkeshögskola.</p>
+                <p>Jag skulle beskriva mig själv som en social och positiv person som lägger ett stort
+                    engagemang i mina arbetsuppgifter och resultat. Jag har även lätt för att kommunicera
+                    med andra och gillar att lösa problem.</p>
+                <p>Webbutveckling tilltalar mig väldigt mycket tack vare tänkandet som krävs för att
+                programmera samt att det även finns möjlighet till att vara kreativ och vara
+                med och skapa de visuella delarna av webbsidor. Med andra ord så gillar jag att det är ett väldigt varierande arbete.</p>
+                <p>Som du säkert har sett så är den här sidans tema inspirerat av ett 80-tals Miami.</p>
+                <p>Istället för att göra en traditionell design så ville jag pröva något nytt och se
+                    vad resultatet kunde bli. För detta tog jag inspiration av media som Miami Vice, Scarface
+                    och Eminence Front. Resultatet blev lite av ett "personligt space", som tyvärr inte är lika vanligt förekommande på internet idag.</p>
+            </article>
+        </section>
+
+        <!--"Mina kunskaper" section-->
+        <section id="skills-section" class="information-section">
+            <!--Blog-header section-->
+            <div class="section-flex-container">
+                <img class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                <div class="hr-container">
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+                <img class="favicon-black" src="/images/favicon-black.png" alt="">
+            </div>
+            <!--Information section-->
+            <article class="content-border-div">
+                <h1>Mina kunskaper</h1>
+                <p>Eftersom jag inte är färdig min utbildning än så har jag inte läst alla
+                    kurser som den inkluderar. De områden som jag hittills har genomfört och har kunskap
+                    inom är följande:</p>
+                <details>
+                    <summary>HTML &amp; SCSS</summary>
+                    <p>Med HTML och CSS/SCSS så kan jag bygga de flesta hemsidor, antingen baserat
+                        på en färdig design eller bara på allmänna önskemål.</p>
+                    <p>Dessa inkluderar bland annat semantisk, strukturerad kod
+                        med hög läsbarhet och responsivitet med hjälp av media
+                        queries.</p>
+                </details>
+                <details>
+                    <summary>Javascript</summary>
+                    <p>Jag skulle säga att jag kan göra det mesta när det kommer till DOM och
+                        att manipulera innehållet på sidor, bara med tillräcklig efterforskning.
+                        Jag vet hur man bland annat arbetar med events, objekt och klasser, samt
+                        funktioner och arrays.</p>
+                    <p>Jag kan även:</p> 
+                        <ul>
+                            <li>bygga webbapplikationer i React och Angular med Typescript 
+                            samt skapa databaskopplingar och REST Api:er.</li>
+                            <li>Göra asynkrona förfrågningar till back-end med Ajax</li>
+                            <li>Skapa egna CRUD operationer för hantering av cookies i webbläsaren</li>
+                        </ul>
+                </details>
+                <details>
+                    <summary>Utveckling av webbapplikationer i C#</summary>
+                    <p>I Asp.net med C# så har jag övat på att skapa webbapplikationer i både MVC och Razor Pages.</p>
+                    <p>Dessa har databaskopplingar med EF Core och kan dynamiskt rendera innehåll samt utföra CRUD-operationer på informationen.</p>
+                    <p>Inget av dessa projekt är publicerade för närvarande då mitt webbhotell inte stöjder Asp.net.</p>
+                </details>
+                <details>
+                    <summary>Andra Kompetenser</summary>
+                        <ul>
+                            <li>Utveckling med agila arbetsmetoder</li>
+                            <li>Skapa användarvänliga webbplatser efter WCAG</li>
+                            <li>Verisionshantering med Git Bash</li>
+                            <li>Serverprogrammering med SQL och byggande av relationsdatabaser</li>
+                            <li>Bildredigeringsprogrammet GIMP</li>
+                        </ul>
+                </details>
+            </article>
+        </section>
+
+        <!--"Projekt/portfolio" section-->
+        <section id="project-section" class="information-section">
+            <!--Blog-header section-->
+            <div class="section-flex-container">
+                <img class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                <div class="hr-container">
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+                <img class="favicon-black" src="/images/favicon-black.png" alt="">
+            </div>
+            <!--Information section-->
+            <article class="content-border-div">
+                <h1>Mina Projekt</h1>
+                <p>På fritiden bygger jag så mycket som möjligt på egna projekt.</p>
+                <p>När jag gör detta så vill jag ta vara på chansen att få skapa en webbplats som både inspirerar och utmanar mig under utvecklingen.
+                    Det brukar börja med en liten idé till utseendet som jag sedan utvecklar till ett koncept.
+                    Jag kan till exempel se ett snyggt mönster och fråga mig själv: "vad kan jag skapa av detta"?</p>
+                <p>Jag förstår att webbsidor behöver se olika ut beroende på ändamål, och att en excentrisk sida
+                    oftast inte är optimalt om man vill bygga en ehandel som har en så hög konventering som möjligt. 
+                    Jag räknar med att jag snart kommer kunna visa upp fler webbsidor som är anpassade efter liknande ändamål.</p>
+                <p class="hide-in-mobile-view">Nedan finner du mina projekt:</p>
+
+                <details>
+                    <summary>Frans183.se - denna sida</summary>
+                    <p>Som du kanske läste under "Om mig" så är den här webbsidan inspirerad av ett 80-tals Miami
+                        baserat på media som Miami Vice, Scarface och Eminence Front.</p>
+                    <p>Den är byggd helt i HTML CSS och Javascript. Trots att det är bra att 
+                        kunna många ramverk och verktyg så tycker jag att det är lika viktigt att inte behöva använda
+                        sig av dem, utan att man har tillräckliga kunskaper för att klara sig själv.
+                    </p>
+                    <p>Sättet den här sidan är byggd på, där innehållet för varje menyaltnernativ är dolt med Javascript,
+                        skulle egentligen passa bättre som en SPA innehållet laddas på användarens begäran. 
+                        Jag har övervägt att bygga om den, men eftersom jag håller på med ett annat React projekt 
+                        just nu så avvaktar jag lite.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Las Flores - startsidan på en webbshop</summary>
+                    <p>Detta är resultatet av en idé jag fick på en design till en webbshops startsida som jag ville bygga.</p>
+                    <p>Eftersom jag var kanska tidigt i min utbildning så är den byggd i ren HTML, CSS och Javascript.</p>
+                    <p>Detta är en av de första webbsidorna jag byggde, vilket betyder att mobil- och tillgänglighetsanpassningen
+                        inte alltid är de bästa beroende på vilken enhet man besöker sidan på. Tanken är att jag så småningom ska 
+                        uppdatera projektet till den standard jag kan utveckla i idag, men andra projekt har fått gå före.
+                    </p>
+                    <p>Alla bilderna är genererade av AI, vilket är ett ganska tacksamt verktyg när man vill bygga mockups på det här sättet.</p>
+                    <p><button class="button-basics"><a href="https://www.frans183.se/las-flores/index.html" target="_blank">Visa sida</a></button></p>
+                </details>
+
+                <details>
+                    <summary>SNDTRCK - komplett webbshop i Razor MVC</summary>
+                    <p>Denna webbshop med vinylskivor byggde jag och en kurskamrat som vårt examensarbete för utbildningen till webbutvecklare.</p>
+                    <p>Webbplatsen är byggd från grunden i Razor MVC och har ett fullt fungerande backend med
+                        administration för produkter och beställningar.
+                    </p>
+                    <p>Medan vi båda hjälptes åt med varandras delar så ansvarade jag främst för:</p>
+                    <ul>
+                        <li>Design och utveckling av frontend</li>
+                        <li>Kundkorgs- och kassafunktionalitet i vanilla Javascript. Detta med cookies och CRUD-operationer för dessa</li>
+                        <li>Sökfunktion med live-förslag där html genereras i en kontroller i backend och sedan 
+                            levereras till webbläsaren med AJAX.</li>
+                        <li>SQL-databas och optimering av denna med hjälp av index och anpassade querys</li>
+                    </ul>
+                    <p>Projektet ligger inte live för tillfället, men här är några bilder för att få en uppfattning av utseendet:</p>
+                    <picture>
+                        <source id="sndtrck-home-img" class="sndtrck-image" type="image/webp" srcset="/images/sndtrck-home.webp">    
+                        <img id="sndtrck-home-img" class="sndtrck-image" src="/images/sndtrck-home.png" decoding="async" alt="Startsida">
+                    </picture>                    
+                    <picture>
+                        <source id="sndtrck-footer-img" class="sndtrck-image" type="image/webp" srcset="/images/sndtrck-footer.webp">    
+                        <img id="sndtrck-footer-img" class="sndtrck-image" src="/images/sndtrck-footer.png" decoding="async" alt="Webbplatsens footer">
+                    </picture>
+                    <div id="sndtrck-img-container">
+                        <picture>
+                            <source id="sndtrck-search-img" class="sndtrck-image" type="image/webp" srcset="/images/sndtrck-search.webp">    
+                            <img id="sndtrck-search-img" class="sndtrck-image" src="/images/sndtrck-search.png" decoding="async" alt="Sökfunktion">
+                        </picture>
+                        <picture>
+                            <source id="sndtrck-menu-img" class="sndtrck-image" type="image/webp" srcset="/images/sndtrck-menu.webp">    
+                            <img id="sndtrck-menu-img" class="sndtrck-image" src="/images/sndtrck-menu.png" decoding="async" alt="Mobilmeny">
+                        </picture>
+                    </div>
+
+                    
+                </details>
+
+                <details>
+                    <summary>Bokningssida för biograf - under uppbyggnad i React</summary>
+                    <p>För att bli ännu bättre på React så bygger jag just nu en bokningssida för en biograf.</p>
+                    <p>Tanken är att frontend ska vara byggt i React och att jag sedan ska bygga backend i Asp.Net Core.
+                        Om detta blir med något extra ramverk eller bara en vanlig REST Api får vi se. 
+                    </p>
+                    <p>Även för den här sidan har jag en spännande design på gång, så jag ser fram emot när den färdig!</p>
+                </details>
+
+            </article>
+        </section>
+
+        <!--"Kontakt" section-->
+        <section id="contact-section" class="information-section">
+            <!--Blog-header section-->
+            <div class="section-flex-container">
+                <img class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                <div class="hr-container">
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+                <img class="favicon-black" src="/images/favicon-black.png" alt="">
+            </div>
+            <!--Information section-->
+            <article class="content-border-div">
+                <h1>Kontakt</h1>
+                <p>Om du vill kontakta mig går det bra att göra med denna mailadress: <span id="email-address" title="Kopiera">info@frans183.se</p>
+                <p>Det går även bra att skapa kontakt och skicka ett meddelande till min <a href="https://www.linkedin.com/in/frans-lindstr%C3%B6m/" target="_blank">LinkedIn-profil</a>.</p>
+                <p>Personligt brev och CV kan lämnas ut på begäran.</p>
+                <p>Jag ser fram emot att höra från dig!</p>
+            </article>
+        </section>
+    </main>
+</div>
+
+<div id="footer-and-menu-container">
+    <label id="mobile-menu-icon" class="hide-in-desktop-view" for="mobile-menu-toggle"><img src="/images/sun-menu.jpg"></label>
+    <input type="checkbox" id="mobile-menu-toggle" class="hide-in-desktop-view hide-in-mobile-view">
+
+    <!--footer with flamingos and waves-->
+    <footer>
+        <picture>
+            <source id="flamingo-left" class="flamingo" type="image/webp" srcset="/images/flamingo-left.webp">    
+            <img id="flamingo-left" class="flamingo" src="/images/flamingo-left.png" alt="flamingo image" aria-hidden="true">
+        </picture>
+        <picture>
+            <source id="flamingo-right" class="flamingo" type="image/webp" srcset="/images/flamingo-rigth.webp">    
+            <img id="flamingo-rigth" class="flamingo" src="/images/flamingo-rigth.png" alt="flamingo image" aria-hidden="true">
+        </picture>
+        <svg id="wave-svg" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            
+            <defs>
+                <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
+                    <stop stop-color="rgba(0, 255, 254, 1)" offset="0%"></stop>
+                    <stop stop-color="rgba(255, 255, 255, 1)" offset="100%"></stop>
+                </linearGradient>
+            </defs>
+            <path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,0L17.1,8C34.3,16,69,32,103,42C137.1,52,171,56,206,52C240,
+            48,274,36,309,36C342.9,36,377,48,411,52C445.7,56,480,52,514,60C548.6,68,583,88,617,90C651.4,92,686,76,720,62C754.3,48,789,36,823,38C857.1,40,891,
+            56,926,62C960,68,994,64,1029,70C1062.9,76,1097,92,1131,94C1165.7,96,1200,84,1234,68C1268.6,52,1303,32,1337,24C1371.4,16,1406,20,1440,30C1474.3,40,
+            1509,56,1543,66C1577.1,76,1611,80,1646,86C1680,92,1714,100,1749,90C1782.9,80,1817,52,1851,34C1885.7,16,1920,8,1954,8C1988.6,8,2023,16,2057,26C2091.4,
+            36,2126,48,2160,46C2194.3,44,2229,28,2263,32C2297.1,36,2331,60,2366,72C2400,84,2434,84,2451,84L2468.6,84L2468.6,120L2451.4,120C2434.3,120,2400,120,2366,
+            120C2331.4,120,2297,120,2263,120C2228.6,120,2194,120,2160,120C2125.7,120,2091,120,2057,120C2022.9,120,1989,120,1954,120C1920,120,1886,120,1851,120C1817.1,
+            120,1783,120,1749,120C1714.3,120,1680,120,1646,120C1611.4,120,1577,120,1543,120C1508.6,120,1474,120,1440,120C1405.7,120,1371,120,1337,120C1302.9,120,1269,
+            120,1234,120C1200,120,1166,120,1131,120C1097.1,120,1063,120,1029,120C994.3,120,960,120,926,120C891.4,120,857,120,823,120C788.6,120,754,120,720,120C685.7,
+            120,651,120,617,120C582.9,120,549,120,514,120C480,120,446,120,411,120C377.1,120,343,120,309,120C274.3,120,240,120,206,120C171.4,120,137,120,103,120C68.6,
+            120,34,120,17,120L0,120Z"></path>
+        </svg>
+        
+    </footer>
+    <menu-component id="menu-component-mobile" class="hide-in-desktop-view"></menu-component>
+</div>
+
+    <script type="module" src="/web-components.js"></script>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

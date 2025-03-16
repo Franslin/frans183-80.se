@@ -1,0 +1,50 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    //line-height: calc(1em + 0.5rem);
+    /* 4. Improve text rendering on macOS*/
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    //max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, form button, textarea, select {
+    //Form button - added to stop interferance with regular button font
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context, good for frameworks like react
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  // Soure: https://www.joshwcomeau.com/css/custom-css-reset/
