@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <title>Frans Lindström</title>
-    <link rel="stylesheet" href="./dist/assets/index-FDtdwtkm.css" type="text/css">
+    <link rel="stylesheet" href="/src/sass/main.scss" type="text/css">
     <link rel="icon" type="icon" href="/images/favicon.png">
 
     <!--Template for menu/navigation -->
@@ -36,15 +36,15 @@
     <!--Header consisting of logo and palm-leaves-->
     <header>
         <picture>
-            <source id="palm-left" class="palm-leaves" type="image/webp" srcset="/images/palm-leaves-left.webp">    
+            <source type="image/webp" srcset="/images/palm-leaves-left.webp">    
             <img id="palm-left" class="palm-leaves" src="/images/palm-leaves-left.jpg" alt="">
         </picture>
         <picture id="picture-logo-container">
-            <source id="logo" type="image/webp" srcset="/images/logo-webp.webp">
+            <source type="image/webp" srcset="/images/logo-webp.webp">
             <img id="logo" src="/images/logo-new-blue.png" alt="Frans Lindström">
         </picture>
         <picture>
-            <source id="palm-rigth" class="palm-leaves" type="image/webp" srcset="/images/palm-leaves-rigth.webp">
+            <source type="image/webp" srcset="/images/palm-leaves-rigth.webp">
             <img id="palm-rigth" class="palm-leaves" src="/images/palm-leaves-rigth.jpg" alt="">
         </picture>
     </header>
@@ -57,13 +57,19 @@
         <section id="start-section" class="information-section">
             <!--Blog-header section-->
             <div class="section-flex-container">
-                <img id="x-icon" class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                <picture>
+                    <source type="image/webp" srcset="/images/x-icon.webp">
+                    <img id="x-icon" class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                </picture>
                 <div class="hr-container">
                     <hr>
                     <hr>
                     <hr>
                 </div>
-                <img class="favicon-black" src="/images/favicon-black.png" alt="">
+                <picture>
+                    <source type="image/webp" srcset="/images/favicon-black.webp">
+                    <img class="favicon-black" src="/images/favicon-black.png" alt="favicon">
+                </picture>
             </div>
             <!--Information section-->
             <article class="content-border-div">
@@ -78,13 +84,19 @@
         <section id="about-me-section" class="information-section">
             <!--Blog-header section-->
             <div class="section-flex-container">
-                <img class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                <picture>
+                    <source type="image/webp" srcset="/images/x-icon.webp">
+                    <img id="x-icon" class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                </picture>
                 <div class="hr-container">
                     <hr>
                     <hr>
                     <hr>
                 </div>
-                <img class="favicon-black" src="/images/favicon-black.png" alt="">
+                <picture>
+                    <source type="image/webp" srcset="/images/favicon-black.webp">
+                    <img class="favicon-black" src="/images/favicon-black.png" alt="favicon">
+                </picture>
             </div>
             <!--Information section-->
             <article class="content-border-div">
@@ -107,13 +119,19 @@
         <section id="skills-section" class="information-section">
             <!--Blog-header section-->
             <div class="section-flex-container">
-                <img class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                <picture>
+                    <source type="image/webp" srcset="/images/x-icon.webp">
+                    <img id="x-icon" class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                </picture>
                 <div class="hr-container">
                     <hr>
                     <hr>
                     <hr>
                 </div>
-                <img class="favicon-black" src="/images/favicon-black.png" alt="">
+                <picture>
+                    <source type="image/webp" srcset="/images/favicon-black.webp">
+                    <img class="favicon-black" src="/images/favicon-black.png" alt="favicon">
+                </picture>
             </div>
             <!--Information section-->
             <article class="content-border-div">
@@ -166,13 +184,19 @@
         <section id="project-section" class="information-section">
             <!--Blog-header section-->
             <div class="section-flex-container">
-                <img class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                <picture>
+                    <source type="image/webp" srcset="/images/x-icon.webp">
+                    <img id="x-icon" class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                </picture>
                 <div class="hr-container">
                     <hr>
                     <hr>
                     <hr>
                 </div>
-                <img class="favicon-black" src="/images/favicon-black.png" alt="">
+                <picture>
+                    <source type="image/webp" srcset="/images/favicon-black.webp">
+                    <img class="favicon-black" src="/images/favicon-black.png" alt="favicon">
+                </picture>
             </div>
             <!--Information section-->
             <article class="content-border-div">
@@ -245,9 +269,7 @@
                             <source id="sndtrck-menu-img" class="sndtrck-image" type="image/webp" srcset="/images/sndtrck-menu.webp">    
                             <img id="sndtrck-menu-img" class="sndtrck-image" src="/images/sndtrck-menu.png" decoding="async" alt="Mobilmeny">
                         </picture>
-                    </div>
-
-                    
+                    </div>                   
                 </details>
 
                 <details>
@@ -266,13 +288,19 @@
         <section id="contact-section" class="information-section">
             <!--Blog-header section-->
             <div class="section-flex-container">
-                <img class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                <picture>
+                    <source type="image/webp" srcset="/images/x-icon.webp">
+                    <img id="x-icon" class="x-icon" src="/images/x-icon.png" alt="Kryss" aria-label="Tillbaka till startsidan">
+                </picture>
                 <div class="hr-container">
                     <hr>
                     <hr>
                     <hr>
                 </div>
-                <img class="favicon-black" src="/images/favicon-black.png" alt="">
+                <picture>
+                    <source type="image/webp" srcset="/images/favicon-black.webp">
+                    <img class="favicon-black" src="/images/favicon-black.png" alt="favicon">
+                </picture>
             </div>
             <!--Information section-->
             <article class="content-border-div">
@@ -287,17 +315,22 @@
 </div>
 
 <div id="footer-and-menu-container">
-    <label id="mobile-menu-icon" class="hide-in-desktop-view" for="mobile-menu-toggle"><img src="/images/sun-menu.jpg"></label>
+    <label id="mobile-menu-icon" class="hide-in-desktop-view" for="mobile-menu-toggle">
+        <picture>
+            <source type="image/webp" srcset="/images/sun-menu.webp">
+            <img src="/images/sun-menu.jpg">
+        </picture>
+    </label>
     <input type="checkbox" id="mobile-menu-toggle" class="hide-in-desktop-view hide-in-mobile-view">
 
     <!--footer with flamingos and waves-->
     <footer>
         <picture>
-            <source id="flamingo-left" class="flamingo" type="image/webp" srcset="/images/flamingo-left.webp">    
+            <source type="image/webp" srcset="/images/flamingo-left.webp">    
             <img id="flamingo-left" class="flamingo" src="/images/flamingo-left.png" alt="flamingo image" aria-hidden="true">
         </picture>
         <picture>
-            <source id="flamingo-right" class="flamingo" type="image/webp" srcset="/images/flamingo-rigth.webp">    
+            <source type="image/webp" srcset="/images/flamingo-rigth.webp">    
             <img id="flamingo-rigth" class="flamingo" src="/images/flamingo-rigth.png" alt="flamingo image" aria-hidden="true">
         </picture>
         <svg id="wave-svg" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -324,7 +357,7 @@
     <menu-component id="menu-component-mobile" class="hide-in-desktop-view"></menu-component>
 </div>
 
-    <script type="module" src="/web-components.js"></script>
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="/src/web-components.js"></script>
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>

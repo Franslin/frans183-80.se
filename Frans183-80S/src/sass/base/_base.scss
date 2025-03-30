@@ -52,6 +52,11 @@ li{
     }
 }
 
+picture{
+    // Makes <picture> element not interfere with layout of <img>-tags.
+    display: contents !important;
+}
+
 details{
     font-weight: bold;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
