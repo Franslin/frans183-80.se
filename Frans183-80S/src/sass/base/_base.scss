@@ -100,7 +100,7 @@ button:focus, .button-basics:focus{
 }
 
 
-/*hides parts of menu options in mobile view*/
+// hides parts of menu options in mobile view.
 .hide-in-mobile-view{
     display: block;
     @include a.max-899-screen{
