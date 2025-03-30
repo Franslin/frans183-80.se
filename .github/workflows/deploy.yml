@@ -1,24 +1,36 @@
 name: FTP Deploy
 
 on:
-  push:
-    branches:
-      - master
+  push: 
+    branches: 
+    - master
 
-jobs: 
-  deploy:
+jobs:
+  build-and-deploy: 
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Deploy To FTP server
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: "./"  # Mappen som ska laddas upp (ändra vid behov)
-          protocol: "ftp"  # Använd "ftp" om du inte har FTPS
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 10.7
 
+    - name: install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build
+
+    - name: Deploy to FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with: 
+        server: ${{ sercrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./dist
+        remote-dir: /
+        protocol: ftp
+        passive: true
