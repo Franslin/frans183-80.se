@@ -4,11 +4,13 @@
     font-family: "miami";
     //The parent directory of "fonts" needs to be named "public" and be located in the project root.
     src: url("/fonts/Love-Strong-personal-Use-Regular/Love_Strong_Personal_Use.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "inika_bold";
     src: url("/fonts/Inika/Inika-Bold.ttf");
+    font-display: swap;
 }
 
 html {
