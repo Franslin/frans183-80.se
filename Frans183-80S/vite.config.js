@@ -1,4 +1,5 @@
-// vite.config.js
+import viteCompression from 'vite-plugin-compression';
+
 export default {
     // config options
     build: {
@@ -6,5 +7,13 @@ export default {
       },
       css: {
         devSourcemap: true // enable CSS source maps during development
-      }
+      },
+      plugins: [
+        viteCompression({
+          verbose: true,
+          disable: false,
+          algorithm: 'brotliCompress',
+          ext: '.br',
+        })
+      ]
   }

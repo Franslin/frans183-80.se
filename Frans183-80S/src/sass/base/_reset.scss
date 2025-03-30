@@ -16,9 +16,14 @@
   }
   
   /* 5. Improve media defaults */
-  img, picture, video, canvas, svg {
+  img, video, canvas, svg {
     display: block;
     //max-width: 100%;
+  }
+
+  picture{
+    // Makes <picture> element not interfere with layout of <img>-tags.
+    display: contents !important;
   }
   
   /* 6. Inherit fonts for form controls */
