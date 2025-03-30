@@ -20,5 +20,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: "./"  # Mappen som ska laddas upp (ändra vid behov)
-          protocol: "ftps"  # Använd "ftp" om du inte har FTPS
+          protocol: "ftp"  # Använd "ftp" om du inte har FTPS
 
