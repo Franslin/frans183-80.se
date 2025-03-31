@@ -7,7 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-Frans183-80S/node_modules
+node_modules
 trash
 dist
 dist-ssr
