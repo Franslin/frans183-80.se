@@ -1,9 +1,9 @@
 name: FTP Deploy
-
+#Tempoarily pause this workflow
 on:
   push: 
     branches: 
-    - master
+   # - master
 
 jobs:
   build-and-deploy: 
