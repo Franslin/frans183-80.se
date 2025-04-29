@@ -157,31 +157,7 @@ function CloseMobileMenu(){
         scrollTo(top);
     }
 }
-/* OLD
-//Eventlistener to scroll menu into view when checkbox is clicked
-document.getElementById('mobile-menu-toggle').addEventListener("click", function(){
-        if(document.getElementById('mobile-menu-toggle').checked){
 
-            //Scrolls the menu into view
-            const start = window.scrollY;
-            const end = document.body.scrollHeight;
-            const distance = end - start;
-            const startTime = performance.now();
-        
-            function scroll(timestamp) {
-                const currentTime = timestamp - startTime;
-                const progress = Math.min(currentTime / 500, 1); // Begränsa progress till 1
-                window.scrollTo(0, start + distance * progress);
-        
-                if (progress < 1) {
-                    requestAnimationFrame(scroll);
-                }
-            }
-            requestAnimationFrame(scroll);
-        }
-    })
-
-*/
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("mobile-menu-toggle");
     const mobileMenu = document.getElementById("menu-component-mobile");
@@ -211,7 +187,24 @@ console.log(`Inner size: ${innerX} x ${innerY}`);
 console.log(`Outer size: ${windowX} x ${windowY}`);
 
 
-//New mobile menu toggle
-//let menuToggle = document.getElementById("mobile-menu-toggle");
-//let footerContainer = document.getElementById("footer-and-menu-container");
-//let contentContainer = document.getElementById("container");
+/*
+const path = document.querySelector("#wave-svg path");
+let step = 0;
+
+function animateWave() {
+  step += 0.008; // Hastigheten på vågorna
+  const amplitude = 12; // Hur höga vågorna ska vara
+  const frequency = 10; // Hur breda vågorna ska vara
+
+  let newD = "M0,0 "; // Startpunkt
+  for (let i = 0; i <= 1440; i += frequency) { // 1440 = svg bredden
+    let y = Math.sin((i + step * 100) * 0.01) * amplitude + 50;
+    newD += `L${i},${y} `;
+  }
+  newD += "L1440,120 L0,120 Z"; // Avslutar vågen
+
+  path.setAttribute("d", newD);
+  requestAnimationFrame(animateWave);
+}
+
+animateWave();*/

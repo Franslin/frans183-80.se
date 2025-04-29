@@ -20,14 +20,17 @@ footer{
     aspect-ratio: initial;
     position: absolute;
     user-select: none;
+    z-index: 1;
     -webkit-user-drag: none;
 
     width: 15%;
-    bottom: -0%;
+    bottom: 0%; 
+    //bottom: -5%; // New value since animation was added to wave-svg
 
     @include a.min-900-screen{
         width: 8.5%;
         bottom: 14%;
+        //bottom: 10%; // New value since animation was added to wave-svg
     }
 }
 
@@ -76,8 +79,6 @@ footer{
             width: 100%;
         }
     }
-
-
 }
 
 #footer-and-menu-container:has(> #mobile-menu-toggle:checked)

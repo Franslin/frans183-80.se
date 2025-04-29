@@ -17,6 +17,8 @@ nav{
         outline: #20fffe solid 2px;
         flex-direction: column;
         justify-content: space-around;
+        position: relative;
+        z-index: 2;
 
     }
 
